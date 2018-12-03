@@ -1,22 +1,14 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
-
-# start the measure
 class AmbientLoopAddEtsSystem < OpenStudio::Measure::ModelMeasure
-
-  # human readable name
   def name
     return "Ambient Loop Add ETS System"
   end
 
-  # human readable description
   def description
-    return ""
+    return "Apply an ETS system to a model"
   end
 
-  # human readable description of modeling approach
   def modeler_description
-    return ""
+    return "This measure removes the existing HVAC system and replaces it with an energy transfer station."
   end
 
   # define the arguments that the user will input
@@ -40,7 +32,7 @@ class AmbientLoopAddEtsSystem < OpenStudio::Measure::ModelMeasure
         end
       end
       zones << thermal_zone if add_zone
-    end  
+    end
 
     return zones
   end
@@ -62,7 +54,7 @@ class AmbientLoopAddEtsSystem < OpenStudio::Measure::ModelMeasure
     model.remove_prm_hvac
 
     File.open("#{run_dir}/prototype-no-hvac.osm", 'w') {|f| f << model.to_s}
-   
+
     # add in the ambient loop model -- this is definitely not right. This adds a water to air heat pump
     model.add_energy_transfer_station("Water-to-Air Heat Pump", get_thermal_zones(model))
 

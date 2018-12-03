@@ -1,22 +1,15 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
-
 require 'erb'
 require 'date'
 
-# start the measure
 class AmbientLoopReports < OpenStudio::Measure::ReportingMeasure
-  # human readable name
   def name
     return 'Ambient Loop Reports'
   end
 
-  # human readable description
   def description
     return 'Add report variables for post processing the ambient loop data.'
   end
 
-  # human readable description of modeling approach
   def modeler_description
     return 'Reporting Variables for Ambient Loop'
   end
@@ -144,8 +137,8 @@ class AmbientLoopReports < OpenStudio::Measure::ReportingMeasure
     # initialize the rows with the header
     puts 'Starting to process Timeseries data'
     rows = [
-      # Initial header row
-      ['Date Time', 'Month', 'Day', 'Day of Week', 'Hour', 'Minute']
+        # Initial header row
+        ['Date Time', 'Month', 'Day', 'Day of Week', 'Hour', 'Minute']
     ]
 
     # just grab one of the variables to get the date/time stamps
@@ -197,8 +190,8 @@ class AmbientLoopReports < OpenStudio::Measure::ReportingMeasure
         end
       end
 
-      runner.registerInfo("Index #{index}, Value 1 #{row[var_1]}, Value 2 #{row[var_2]}, Class #{row[var_1]}")
-      runner.registerInfo("rows[index] class #{rows[index]}")
+      # runner.registerInfo("Index #{index}, Value 1 #{row[var_1]}, Value 2 #{row[var_2]}, Class #{row[var_1]}")
+      # runner.registerInfo("rows[index] class #{rows[index]}")
       rows[index] << row[var_1].to_f + row[var_2].to_f
     end
 
@@ -212,7 +205,7 @@ class AmbientLoopReports < OpenStudio::Measure::ReportingMeasure
     # Find the total runtime for energyplus and save it into a registerValue
     total_time = -999
     location_of_file = ['../eplusout.end', './run/eplusout.end']
-    first_index = location_of_file.map{ |f| File.exist?(f) }.index(true)
+    first_index = location_of_file.map {|f| File.exist?(f)}.index(true)
     if first_index
       match = File.read(location_of_file[first_index]).to_s.match(/Elapsed.Time=(.*)hr(.*)min(.*)sec/)
       total_time = match[1].to_i * 3600 + match[2].to_i * 60 + match[3].to_f
@@ -220,7 +213,7 @@ class AmbientLoopReports < OpenStudio::Measure::ReportingMeasure
 
     runner.registerValue('energyplus_runtime', total_time, 'sec')
 
-    return  true
+    return true
   ensure
     sqlFile.close if sqlFile
   end

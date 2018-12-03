@@ -1,20 +1,12 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
-
-# start the measure
 class AmbientLoopTemperatureSetpoint < OpenStudio::Ruleset::ModelUserScript
-
-  # human readable name
   def name
     return "Ambient Loop Temperature Setpoint"
   end
 
-  # human readable description
   def description
     return "Set the temperature of the ambient loop to a specific value."
   end
 
-  # human readable description of modeling approach
   def modeler_description
     return "There are naming restrictions in this measure. Plant loop must be named 'Ambient Loop'"
   end
@@ -33,7 +25,7 @@ class AmbientLoopTemperatureSetpoint < OpenStudio::Ruleset::ModelUserScript
 
     delta = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("design_delta", true)
     delta.setUnits("Delta Temperature")
-    delta.setDefaultValue(5.55)  # 10 Deg F default delta
+    delta.setDefaultValue(5.55) # 10 Deg F default delta
     delta.setDisplayName("Delta Design Loop Temperature")
     delta.setDescription("Set the delta design temperature for the ambient loop")
     args << delta
@@ -77,9 +69,7 @@ class AmbientLoopTemperatureSetpoint < OpenStudio::Ruleset::ModelUserScript
     runner.registerFinalCondition("The final maximum loop temperature is: #{setpoint}")
 
     return true
-
   end
-  
 end
 
 # register the measure to be used by the application

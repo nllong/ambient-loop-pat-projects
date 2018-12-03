@@ -1,8 +1,4 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
-
-# start the measure
-class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
+class InternalLoadsMultiplier < OpenStudio::Measure::ModelMeasure
   # require all .rb files in resources folder
   Dir[File.dirname(__FILE__) + '/resources/*.rb'].each {|file| require file}
 
@@ -28,8 +24,6 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
   def arguments(model)
     args = OpenStudio::Ruleset::OSArgumentVector.new
 
-    # argument for lpd
-    # note: the new consumption method is ontly setup to work on lights that are wattsperSpaceFloorArea and use ScheduleRulesets. It will fail with ruby error if that isn't the case, but for TenantStart this will be fine.
     lpd = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("lpd_multiplier", true)
     lpd.setDisplayName("LPD Multiplier")
     lpd.setDefaultValue(1.0)
@@ -37,7 +31,6 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
     lpd.setDescription("Multiply the LPD in the building by this multiplier. Retail LPD is typically 1.3, Small Office 1.0")
     args << lpd
 
-    # argument for epd
     epd = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("epd_multiplier", true)
     epd.setDisplayName("Electric Equipment Power Density Multiplier")
     epd.setDefaultValue(1.0)
@@ -45,7 +38,6 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
     epd.setDescription("Multiply the EPD in the building by this value")
     args << epd
 
-    # argument for people_per_floor_area
     people_per_floor_area = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("people_per_floor_area_multiplier", true)
     people_per_floor_area.setDisplayName("People per floor area multipleir")
     people_per_floor_area.setDefaultValue(1.0)
@@ -62,7 +54,7 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
     # assign the user inputs to variables
     args = OsLib_HelperMethods.createRunVariables(runner, model, user_arguments, arguments(model))
 
-    return false if !args
+    return false unless args
 
     # array of altered lighting defitinos (tracking so isn't altered twice)
     altered_light_defs = []
@@ -81,10 +73,9 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
       # update lights
       space_type.lights.each do |light|
         light_def = light.lightsDefinition
-        if not altered_light_defs.include?(light_def)
+        unless altered_light_defs.include? light_def
           light_def.setWattsperSpaceFloorArea(light_def.wattsperSpaceFloorArea.get * args['lpd_multiplier'])
           altered_light_defs << light_def
-
           ave_lpd += light_def.wattsperSpaceFloorArea.get
           ave_lpd_count += 1
         end
@@ -96,7 +87,6 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
         ave_epd += space_type.electricEquipmentPowerPerFloorArea.get
       end
 
-
       # replace people
       if space_type.peoplePerFloorArea.is_initialized
         space_type.setPeoplePerFloorArea(space_type.peoplePerFloorArea.get * args['people_per_floor_area_multiplier'])
@@ -107,16 +97,15 @@ class InternalLoadsMultiplier < OpenStudio::Ruleset::ModelUserScript
     end
 
     if ave_lpd_count > 0
-      runner.registerValue('lpd_average', ave_lpd/ave_lpd_count, 'W/m2')
+      runner.registerValue('lpd_average', ave_lpd / ave_lpd_count, 'W/m2')
     end
 
     if ave_space_count > 0
-      runner.registerValue('epd_average', ave_epd/ave_space_count, 'W/m2')
-      runner.registerValue('ppl_average', ave_pd/ave_space_count, 'People/m2')
+      runner.registerValue('epd_average', ave_epd / ave_space_count, 'W/m2')
+      runner.registerValue('ppl_average', ave_pd / ave_space_count, 'People/m2')
     end
 
     return true
-
   end
 end
 

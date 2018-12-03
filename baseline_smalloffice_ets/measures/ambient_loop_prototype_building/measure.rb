@@ -1,25 +1,19 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
+# Since we are using the non-standard version of OpenStudio standards, we must call the require explicitly here.
+require 'openstudio-standards'
 
-# start the measure
-class AmbientLoopPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
-
-  # human readable name
+class AmbientLoopPrototypeBuilding < OpenStudio::Measure::ModelMeasure
   def name
     return "Ambient Loop Prototype Building"
   end
 
-  # human readable description
   def description
     return "Ambient Loop Prototype Building"
   end
 
-  # human readable description of modeling approach
   def modeler_description
     return "Ambient Loop Prototype Building"
   end
 
-  # define the arguments that the user will input
   def arguments(model)
     args = OpenStudio::Measure::OSArgumentVector.new
 
@@ -117,16 +111,6 @@ class AmbientLoopPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
     # For some reason new_model.save does not work inside the measure.
     File.open("#{run_dir}/prototype.osm", 'w') {|f| f << new_model.to_s}
 
-    # runner.registerInfo "trying to remove HVAC equipment"
-    # new_model.remove_prm_hvac
-    #
-    # File.open("#{run_dir}/prototype-no-hvac.osm", 'w') {|f| f << new_model.to_s}
-    #
-    # add in the ambient loop model -- this is definitely not right. This adds a water to air heat pump
-    # new_model.add_energy_transfer_station("Water-to-Air Heat Pump", new_model.getThermalZones)
-    #
-    # File.open("#{run_dir}/final.osm", 'w') {|f| f << new_model.to_s}
-
     # remove existing objects from model
     handles = OpenStudio::UUIDVector.new
     model.objects.each do |obj|
@@ -149,5 +133,4 @@ class AmbientLoopPrototypeBuilding < OpenStudio::Ruleset::ModelUserScript
   end
 end
 
-# register the measure to be used by the application
 AmbientLoopPrototypeBuilding.new.registerWithApplication

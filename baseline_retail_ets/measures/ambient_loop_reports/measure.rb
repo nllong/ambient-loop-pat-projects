@@ -1,25 +1,17 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
-
 require 'erb'
 require 'date'
 
-#start the measure
-class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
-
-  # human readable name
+class AmbientLoopReports < OpenStudio::Measure::ReportingMeasure
   def name
-    return "Ambient Loop Reports"
+    return 'Ambient Loop Reports'
   end
 
-  # human readable description
   def description
-    return "Add report variables for post processing the ambient loop data."
+    return 'Add report variables for post processing the ambient loop data.'
   end
 
-  # human readable description of modeling approach
   def modeler_description
-    return "Reporting Variables for Ambient Loop"
+    return 'Reporting Variables for Ambient Loop'
   end
 
   def log(str)
@@ -27,7 +19,7 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
   end
 
   # define the arguments that the user will input
-  def arguments()
+  def arguments
     args = OpenStudio::Ruleset::OSArgumentVector.new
 
     # this measure does not require any user arguments, return an empty list
@@ -40,51 +32,48 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
 
     result = OpenStudio::IdfObjectVector.new
 
-    # use the built-in error checking 
-    if !runner.validateUserArguments(arguments(), user_arguments)
-      return result
-    end
-
+    # use the built-in error checking
+    return result unless runner.validateUserArguments(arguments, user_arguments)
 
     # Output:Variable,*,Facility Heating Setpoint Not Met Time,hourly; !- Zone Sum [hr]
     # Output:Variable,*,Facility Cooling Setpoint Not Met Time,hourly; !- Zone Sum [hr]
     # Output:Variable,*,Facility Heating Setpoint Not Met While Occupied Time,hourly; !- Zone Sum [hr]
     # Output:Variable,*,Facility Cooling Setpoint Not Met While Occupied Time,hourly; !- Zone Sum [hr]
 
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Cooling Inlet Temperature,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Cooling Outlet Temperature,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Cooling Mass Flow Rate,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Heating Inlet Temperature,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Heating Outlet Temperature,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Heating Mass Flow Rate,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Heating Hot Water Energy,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,District Cooling Chilled Water Energy,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Site Mains Water Temperature,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Drybulb Temperature,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,,Site Outdoor Air Relative Humidity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,Cooling:Electricity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,Heating:Electricity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Variable,*,Zone Predicted Sensible Load to Setpoint Heat Transfer Rate,hourly,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,Heating:Gas,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,InteriorLights:Electricity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,Fans:Electricity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,InteriorEquipment:Electricity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,ExteriorLighting:Electricity,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,Electricity:Facility,timestep;").get
-    result << OpenStudio::IdfObject.load("Output:Meter,Gas:Facility,timestep;").get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Cooling Inlet Temperature,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Cooling Outlet Temperature,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Cooling Mass Flow Rate,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Heating Inlet Temperature,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Heating Outlet Temperature,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Heating Mass Flow Rate,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Heating Hot Water Energy,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,District Cooling Chilled Water Energy,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,Site Mains Water Temperature,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,Site Outdoor Air Drybulb Temperature,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,,Site Outdoor Air Relative Humidity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,Cooling:Electricity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,Heating:Electricity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Variable,*,Zone Predicted Sensible Load to Setpoint Heat Transfer Rate,hourly,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,Heating:Gas,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,InteriorLights:Electricity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,Fans:Electricity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,InteriorEquipment:Electricity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,ExteriorLighting:Electricity,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,Electricity:Facility,timestep;').get
+    result << OpenStudio::IdfObject.load('Output:Meter,Gas:Facility,timestep;').get
 
     return result
   end
 
-  def extract_timeseries_into_matrix(sqlfile, data, variable_name, key_value=nil)
+  def extract_timeseries_into_matrix(sqlfile, data, variable_name, key_value = nil)
     log "Executing query for #{variable_name}"
     if key_value
       ts = sqlfile.timeSeries('RUN PERIOD 1', 'Zone Timestep', variable_name, key_value)
     else
       ts = sqlfile.timeSeries('RUN PERIOD 1', 'Zone Timestep', variable_name)
     end
-    log "Iterating over timeseries"
-    column = [variable_name.gsub(":", "")] # Set the header of the data to the variable name, removing :
+    log 'Iterating over timeseries'
+    column = [variable_name.delete(':')] # Set the header of the data to the variable name, removing :
     unless ts.empty?
       ts = ts.get if ts.respond_to?(:get)
       ts = ts.first if ts.respond_to?(:first)
@@ -100,13 +89,13 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
 
       # the first and last have some cleanup items because of the Vector method
       quick_proc[0] = quick_proc[0].gsub(/^.*\(/, '')
-      quick_proc[-1] = quick_proc[-1].gsub(")", '')
+      quick_proc[-1] = quick_proc[-1].delete(')')
       column += quick_proc
 
       log "Took #{Time.now - start} to iterate"
     end
 
-    log "Appending column to data"
+    log 'Appending column to data'
 
     # append the data to the end of the rows
     if column.size == data.size
@@ -121,22 +110,20 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
   def run(runner, user_arguments)
     super(runner, user_arguments)
 
-    # use the built-in error checking 
-    if !runner.validateUserArguments(arguments(), user_arguments)
-      return false
-    end
+    # use the built-in error checking
+    return false unless runner.validateUserArguments(arguments, user_arguments)
 
     # get the last model and sql file
     model = runner.lastOpenStudioModel
     if model.empty?
-      runner.registerError("Cannot find last model.")
+      runner.registerError('Cannot find last model.')
       return false
     end
     model = model.get
 
     sqlFile = runner.lastEnergyPlusSqlFile
     if sqlFile.empty?
-      runner.registerError("Cannot find last sql file.")
+      runner.registerError('Cannot find last sql file.')
       return false
     end
     sqlFile = sqlFile.get
@@ -148,7 +135,7 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
     #   - data are the same length
 
     # initialize the rows with the header
-    puts "Starting to process Timeseries data"
+    puts 'Starting to process Timeseries data'
     rows = [
         # Initial header row
         ['Date Time', 'Month', 'Day', 'Day of Week', 'Hour', 'Minute']
@@ -156,12 +143,12 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
 
     # just grab one of the variables to get the date/time stamps
     ts = sqlFile.timeSeries('RUN PERIOD 1', 'Zone Timestep', 'Cooling:Electricity')
-    if !ts.empty?
+    unless ts.empty?
       ts = ts.first
 
       # Save off the date time values
-      ts.dateTimes.each_with_index do |dt, index|
-        rows << [DateTime.parse(dt.to_s).strftime("%m/%d/%Y %H:%M"), dt.date.monthOfYear.value, dt.date.dayOfMonth, dt.date.dayOfWeek.value, dt.time.hours, dt.time.minutes, ]
+      ts.dateTimes.each_with_index do |dt, _index|
+        rows << [DateTime.parse(dt.to_s).strftime('%m/%d/%Y %H:%M'), dt.date.monthOfYear.value, dt.date.dayOfMonth, dt.date.dayOfWeek.value, dt.time.hours, dt.time.minutes]
       end
     end
 
@@ -185,7 +172,6 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
     # Figure out how to add this variable, probably by zone:
     # "Output:Variable,*,Zone Predicted Sensible Load to Setpoint Heat Transfer Rate,hourly,timestep;").get
 
-
     # sum up a couple of the columns and create a new column
     var_1 = nil
     var_2 = nil
@@ -204,8 +190,8 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
         end
       end
 
-      runner.registerInfo("Index #{index}, Value 1 #{row[var_1]}, Value 2 #{row[var_2]}, Class #{row[var_1]}")
-      runner.registerInfo("rows[index] class #{rows[index]}")
+      # runner.registerInfo("Index #{index}, Value 1 #{row[var_1]}, Value 2 #{row[var_2]}, Class #{row[var_1]}")
+      # runner.registerInfo("rows[index] class #{rows[index]}")
       rows[index] << row[var_1].to_f + row[var_2].to_f
     end
 
@@ -215,6 +201,17 @@ class AmbientLoopReports < OpenStudio::Ruleset::ReportingUserScript
         f << row.join(',') << "\n"
       end
     end
+
+    # Find the total runtime for energyplus and save it into a registerValue
+    total_time = -999
+    location_of_file = ['../eplusout.end', './run/eplusout.end']
+    first_index = location_of_file.map {|f| File.exist?(f)}.index(true)
+    if first_index
+      match = File.read(location_of_file[first_index]).to_s.match(/Elapsed.Time=(.*)hr(.*)min(.*)sec/)
+      total_time = match[1].to_i * 3600 + match[2].to_i * 60 + match[3].to_f
+    end
+
+    runner.registerValue('energyplus_runtime', total_time, 'sec')
 
     return true
   ensure

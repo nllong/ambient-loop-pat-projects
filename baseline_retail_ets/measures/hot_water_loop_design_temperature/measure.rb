@@ -1,20 +1,12 @@
-# see the URL below for information on how to write OpenStudio measures
-# http://nrel.github.io/OpenStudio-user-documentation/reference/measure_writing_guide/
-
-# start the measure
-class HotWaterLoopDesignTemperature < OpenStudio::Ruleset::ModelUserScript
-
-  # human readable name
+class HotWaterLoopDesignTemperature < OpenStudio::Measure::ModelMeasure
   def name
     return "Hot Water Loop Design Temperature"
   end
 
-  # human readable description
   def description
     return "Set the design temperature of the Hot Water Loop to the specified value."
   end
 
-  # human readable description of modeling approach
   def modeler_description
     return "The name of the loop must be 'Hot Water Loop'"
   end

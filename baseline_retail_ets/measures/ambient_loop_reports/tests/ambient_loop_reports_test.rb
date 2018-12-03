@@ -7,18 +7,17 @@ require_relative '../measure.rb'
 require 'fileutils'
 
 class AmbientLoopReports_Test < MiniTest::Unit::TestCase
-
   def is_openstudio_2?
     begin
       workflow = OpenStudio::WorkflowJSON.new
-    rescue
+    rescue StandardError
       return false
     end
-    return true
+    true
   end
 
   def model_in_path_default
-    return "#{File.dirname(__FILE__)}/example_model.osm"
+    "#{File.dirname(__FILE__)}/example_model.osm"
   end
 
   def epw_path_default
@@ -26,41 +25,40 @@ class AmbientLoopReports_Test < MiniTest::Unit::TestCase
     epw = nil
     epw = OpenStudio::Path.new(File.expand_path("#{File.dirname(__FILE__)}/USA_CO_Golden-NREL.724666_TMY3.epw"))
     assert(File.exist?(epw.to_s))
-    return epw.to_s
+    epw.to_s
   end
 
   def run_dir(test_name)
     # always generate test output in specially named 'output' directory so result files are not made part of the measure
-    return "#{File.dirname(__FILE__)}/output/#{test_name}"
+    "#{File.dirname(__FILE__)}/output/#{test_name}"
   end
 
   def model_out_path(test_name)
-    return "#{run_dir(test_name)}/example_model.osm"
+    "#{run_dir(test_name)}/example_model.osm"
   end
 
   def sql_path(test_name)
     if is_openstudio_2?
-      return "#{run_dir(test_name)}/run/eplusout.sql"
+      "#{run_dir(test_name)}/run/eplusout.sql"
     else
-      return "#{run_dir(test_name)}/ModelToIdf/EnergyPlusPreProcess-0/EnergyPlus-0/eplusout.sql"
+      "#{run_dir(test_name)}/ModelToIdf/EnergyPlusPreProcess-0/EnergyPlus-0/eplusout.sql"
     end
   end
 
   def report_path(test_name)
-    return "#{run_dir(test_name)}/report.html"
+    "#{run_dir(test_name)}/report.html"
   end
 
   # method for running the test simulation using OpenStudio 1.x API
   def setup_test_1(test_name, epw_path)
-
     co = OpenStudio::Runmanager::ConfigOptions.new(true)
     co.findTools(false, true, false, true)
 
-    if !File.exist?(sql_path(test_name))
-      puts "Running EnergyPlus"
+    unless File.exist?(sql_path(test_name))
+      puts 'Running EnergyPlus'
 
-      wf = OpenStudio::Runmanager::Workflow.new("modeltoidf->energypluspreprocess->energyplus")
-      wf.add(co.getTools())
+      wf = OpenStudio::Runmanager::Workflow.new('modeltoidf->energypluspreprocess->energyplus')
+      wf.add(co.getTools)
       job = wf.create(OpenStudio::Path.new(run_dir(test_name)), OpenStudio::Path.new(model_out_path(test_name)), OpenStudio::Path.new(epw_path))
 
       rm = OpenStudio::Runmanager::RunManager.new
@@ -87,15 +85,10 @@ class AmbientLoopReports_Test < MiniTest::Unit::TestCase
 
   # create test files if they do not exist when the test first runs
   def setup_test(test_name, idf_output_requests, model_in_path = model_in_path_default, epw_path = epw_path_default)
-
-    if !File.exist?(run_dir(test_name))
-      FileUtils.mkdir_p(run_dir(test_name))
-    end
+    FileUtils.mkdir_p(run_dir(test_name)) unless File.exist?(run_dir(test_name))
     assert(File.exist?(run_dir(test_name)))
 
-    if File.exist?(report_path(test_name))
-      FileUtils.rm(report_path(test_name))
-    end
+    FileUtils.rm(report_path(test_name)) if File.exist?(report_path(test_name))
 
     assert(File.exist?(model_in_path))
 
@@ -104,14 +97,14 @@ class AmbientLoopReports_Test < MiniTest::Unit::TestCase
     end
 
     # convert output requests to OSM for testing, OS App and PAT will add these to the E+ Idf
-    workspace = OpenStudio::Workspace.new("Draft".to_StrictnessLevel, "EnergyPlus".to_IddFileType)
+    workspace = OpenStudio::Workspace.new('Draft'.to_StrictnessLevel, 'EnergyPlus'.to_IddFileType)
     workspace.addObjects(idf_output_requests)
     rt = OpenStudio::EnergyPlus::ReverseTranslator.new
     request_model = rt.translateWorkspace(workspace)
 
     translator = OpenStudio::OSVersion::VersionTranslator.new
     model = translator.loadModel(model_in_path)
-    assert((not model.empty?))
+    assert(!model.empty?)
     model = model.get
     model.addObjects(request_model.objects)
     model.save(model_out_path(test_name), true)
@@ -174,7 +167,7 @@ class AmbientLoopReports_Test < MiniTest::Unit::TestCase
       measure.run(runner, argument_map)
       result = runner.result
       show_output(result)
-      assert_equal("Success", result.value.valueName)
+      assert_equal('Success', result.value.valueName)
     ensure
       Dir.chdir(start_dir)
     end
@@ -183,5 +176,4 @@ class AmbientLoopReports_Test < MiniTest::Unit::TestCase
     check_file = "#{run_dir(__method__)}/report_timeseries.csv"
     assert(File.exist?(check_file))
   end
-
 end
