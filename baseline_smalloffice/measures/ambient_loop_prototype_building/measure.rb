@@ -1,3 +1,4 @@
+# Since we are using the non-standard version of OpenStudio standards, we must call the require explicitly here.
 require 'openstudio-standards'
 
 class AmbientLoopPrototypeBuilding < OpenStudio::Measure::ModelMeasure

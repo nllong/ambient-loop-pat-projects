@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>ambient_loop_reports</name>
   <uid>9b470a52-d218-4b50-80dd-d229ce73438d</uid>
-  <version_id>dc97a0a9-945a-4d7b-9ac5-8f16de060c31</version_id>
-  <version_modified>20180525T034752Z</version_modified>
+  <version_id>8c9136ba-30db-4731-95fd-c0bfe2b88a0b</version_id>
+  <version_modified>20181203T222605Z</version_modified>
   <xml_checksum>15BF4E57</xml_checksum>
   <class_name>AmbientLoopReports</class_name>
   <display_name>Ambient Loop Reports</display_name>
@@ -45,7 +45,7 @@
       <filename>ambient_loop_reports_test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>4203D8C0</checksum>
+      <checksum>C52F45CF</checksum>
     </file>
     <file>
       <version>
@@ -56,7 +56,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>FAD17EC1</checksum>
+      <checksum>0B873135</checksum>
     </file>
   </files>
 </measure>

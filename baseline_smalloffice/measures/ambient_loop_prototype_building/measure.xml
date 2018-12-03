@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>ambient_loop_prototype_building</name>
   <uid>a5ce0ccb-51eb-4306-9db4-91fe6cf1b56b</uid>
-  <version_id>38af5240-c692-45ae-b11c-31bf2bf04f80</version_id>
-  <version_modified>20181203T213738Z</version_modified>
+  <version_id>b317d499-a316-4932-a467-770d4b50522d</version_id>
+  <version_modified>20181203T222605Z</version_modified>
   <xml_checksum>2C38F48B</xml_checksum>
   <class_name>AmbientLoopPrototypeBuilding</class_name>
   <display_name>Ambient Loop Prototype Building</display_name>
@@ -231,7 +231,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>C6C896D7</checksum>
+      <checksum>435CD309</checksum>
     </file>
   </files>
 </measure>

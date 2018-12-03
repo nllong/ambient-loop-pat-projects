@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>internal_loads_multiplier</name>
   <uid>8c10b18d-c66d-43dc-9ef5-b82dfed0edde</uid>
-  <version_id>60e0b53d-a641-4025-a571-a79aebc7500a</version_id>
-  <version_modified>20180523T021801Z</version_modified>
+  <version_id>8b9e078c-393a-44ad-a57b-c616827f0271</version_id>
+  <version_modified>20180927T020345Z</version_modified>
   <xml_checksum>2C38F48B</xml_checksum>
   <class_name>InternalLoadsMultiplier</class_name>
   <display_name>Internal Loads Multiplier</display_name>
@@ -80,7 +80,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>A455A3AC</checksum>
+      <checksum>1CC8AEDC</checksum>
     </file>
   </files>
 </measure>
