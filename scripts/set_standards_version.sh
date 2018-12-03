@@ -1,15 +1,15 @@
-#!/usr/bin/env bash -e
+#!/bin/bash -e
 
 # This script will enable a user to change a single gem in the list of accessible gems. The script will create the NEW_GEMFILE_DIR if it
 # does not already exist.
 
 if [[ (-z $1) || (-z $2) || (-z $3) || (-z $4) ]] ; then
     echo "Expecting script to have 3 parameters:"
-    echo "  1: Path to where OpenStudio is installed on the system. Docker: /usr/local/OpenStudio-2.7.0. OSXL: /Applications/OpenStudio-2.7.0/Ruby" 
+    echo "  1: Path to where OpenStudio is installed on the system. Docker: /usr/local/openstudio-2.7.1. OSX: /Applications/openstudio-2.7.0/Ruby" 
     echo "  2: Name of the exiting gem to replace, e.g. openstudio-standards"
     echo "  3: Argument of the new gem GitHub repo, e.g. NREL/openstudio-standards"
     echo "  4: Name of the GitHub branch to install, e.g. master"
-    echo "  -- example use: ./set_standards_version.sh /usr/local/OpenStudio-2.7.0/ openstudio-standards NREL/openstudio-standards master"
+    echo "  -- example use: ./set_standards_version.sh /usr/local/openstudio-2.7.1/Ruby openstudio-standards NREL/openstudio-standards master"
     exit 1
 fi
 

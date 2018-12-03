@@ -12,3 +12,4 @@
 */sweep*.zip
 */test_results/
 */tests/output/*
+*/local_configuration.json
