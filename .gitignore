@@ -1,0 +1,14 @@
+.idea
+*/clusters
+*/logs/
+*/localResults
+*/data
+*/results.xml
+*/Ambient Loop *.zip
+*/Ambient Loop *.json
+*/baseline*.zip
+*/baseline*.json
+*/sweep*.json
+*/sweep*.zip
+*/test_results/
+*/tests/output/*

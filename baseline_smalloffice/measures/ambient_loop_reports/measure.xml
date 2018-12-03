@@ -1,0 +1,62 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>ambient_loop_reports</name>
+  <uid>9b470a52-d218-4b50-80dd-d229ce73438d</uid>
+  <version_id>dc97a0a9-945a-4d7b-9ac5-8f16de060c31</version_id>
+  <version_modified>20180525T034752Z</version_modified>
+  <xml_checksum>15BF4E57</xml_checksum>
+  <class_name>AmbientLoopReports</class_name>
+  <display_name>Ambient Loop Reports</display_name>
+  <description>Add report variables for post processing the ambient loop data.</description>
+  <modeler_description>Reporting Variables for Ambient Loop</modeler_description>
+  <arguments/>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Reporting.QAQC</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ReportingMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>USA_CO_Golden-NREL.724666_TMY3.epw</filename>
+      <filetype>epw</filetype>
+      <usage_type>test</usage_type>
+      <checksum>BDF687C1</checksum>
+    </file>
+    <file>
+      <filename>report.html.in</filename>
+      <filetype>in</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>3F69E3FB</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>2514AA60</checksum>
+    </file>
+    <file>
+      <filename>ambient_loop_reports_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>4203D8C0</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>FAD17EC1</checksum>
+    </file>
+  </files>
+</measure>

@@ -1,0 +1,56 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>ambient_loop_add_ets_system</name>
+  <uid>ef83af59-3005-4d3e-9477-6de226168580</uid>
+  <version_id>5dde67f2-8e2a-4c8d-a190-6411fe3fa250</version_id>
+  <version_modified>20180818T150027Z</version_modified>
+  <xml_checksum>2C38F48B</xml_checksum>
+  <class_name>AmbientLoopAddEtsSystem</class_name>
+  <display_name>Ambient Loop Add ETS System</display_name>
+  <description></description>
+  <modeler_description></modeler_description>
+  <arguments/>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Whole Building.Space Types</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <filename>ambient_loop_add_ets_system_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>2921FE9B</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>63978D6B</checksum>
+    </file>
+    <file>
+      <filename>prototype-no-hvac.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>BED3B87B</checksum>
+    </file>
+  </files>
+</measure>
