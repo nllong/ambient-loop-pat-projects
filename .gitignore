@@ -13,4 +13,5 @@
 */test_results/
 */tests/output/*
 */local_configuration.json
-
+**/data_point/initialize.args
+**/analysis/initialize.args
