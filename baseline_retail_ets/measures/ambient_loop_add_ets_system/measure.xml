@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>ambient_loop_add_ets_system</name>
   <uid>ef83af59-3005-4d3e-9477-6de226168580</uid>
-  <version_id>86858112-6e79-486d-8361-1b3c1c9cd0a5</version_id>
-  <version_modified>20180927T015217Z</version_modified>
+  <version_id>733aedca-4edf-471b-82a0-fa8de0a5265b</version_id>
+  <version_modified>20181206T144045Z</version_modified>
   <xml_checksum>2C38F48B</xml_checksum>
   <class_name>AmbientLoopAddEtsSystem</class_name>
   <display_name>Ambient Loop Add ETS System</display_name>
@@ -24,22 +24,16 @@
   </attributes>
   <files>
     <file>
-      <filename>example_model.osm</filename>
+      <filename>prototype-no-hvac.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
-      <checksum>53D14E69</checksum>
+      <checksum>BED3B87B</checksum>
     </file>
     <file>
       <filename>ambient_loop_add_ets_system_test.rb</filename>
       <filetype>rb</filetype>
       <usage_type>test</usage_type>
-      <checksum>2921FE9B</checksum>
-    </file>
-    <file>
-      <filename>prototype-no-hvac.osm</filename>
-      <filetype>osm</filetype>
-      <usage_type>test</usage_type>
-      <checksum>BED3B87B</checksum>
+      <checksum>3AE1458B</checksum>
     </file>
     <file>
       <version>
@@ -50,7 +44,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E54DC6E1</checksum>
+      <checksum>B9C07B27</checksum>
     </file>
   </files>
 </measure>

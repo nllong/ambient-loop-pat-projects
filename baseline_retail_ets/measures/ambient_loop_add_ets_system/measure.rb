@@ -50,7 +50,7 @@ class AmbientLoopAddEtsSystem < OpenStudio::Measure::ModelMeasure
     run_dir = File.join('models')
     FileUtils.mkdir_p run_dir unless Dir.exist? run_dir
 
-    runner.registerInfo "trying to remove HVAC equipment"
+    runner.registerInfo "Removing existing HVAC equipment"
     model.remove_prm_hvac
 
     File.open("#{run_dir}/prototype-no-hvac.osm", 'w') {|f| f << model.to_s}

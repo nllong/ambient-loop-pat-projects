@@ -57,9 +57,9 @@
   "openstudioMD5": "",
   "measures": [
     {
-      "measure_dir": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_prototype_building",
+      "measure_dir": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/ambient_loop_prototype_building",
       "name": "ambient_loop_prototype_building",
-      "directory": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_prototype_building",
+      "directory": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/ambient_loop_prototype_building",
       "uid": "a5ce0ccb-51eb-4306-9db4-91fe6cf1b56b",
       "uuid": "{a5ce0ccb-51eb-4306-9db4-91fe6cf1b56b}",
       "version_id": "b317d499-a316-4932-a467-770d4b50522d",
@@ -312,7 +312,7 @@
       "seed": "example_model.osm",
       "workflow_index": 0,
       "options": [],
-      "instanceId": 0.3023358427685152,
+      "instanceId": 0.9522477526371158,
       "skip": false,
       "$$hashKey": "object:5825",
       "showWarningText": false,
@@ -494,7 +494,7 @@
       "seed": "example_model.osm",
       "workflow_index": 1,
       "options": [],
-      "instanceId": 0.8477502318750934,
+      "instanceId": 0.6831113368486772,
       "skip": false,
       "$$hashKey": "object:7943",
       "showWarningText": false,
@@ -506,9 +506,9 @@
       "directory": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_add_ets_system",
       "uid": "ef83af59-3005-4d3e-9477-6de226168580",
       "uuid": "{ef83af59-3005-4d3e-9477-6de226168580}",
-      "version_id": "86858112-6e79-486d-8361-1b3c1c9cd0a5",
-      "version_uuid": "{86858112-6e79-486d-8361-1b3c1c9cd0a5}",
-      "version_modified": "20180927T015217Z",
+      "version_id": "733aedca-4edf-471b-82a0-fa8de0a5265b",
+      "version_uuid": "{733aedca-4edf-471b-82a0-fa8de0a5265b}",
+      "version_modified": "20181206T144045Z",
       "xml_checksum": "2C38F48B",
       "display_name": "Ambient Loop Add ETS System",
       "class_name": "AmbientLoopAddEtsSystem",
@@ -531,22 +531,22 @@
       "add": "",
       "open": true,
       "addedToProject": true,
-      "date": "9/26/2018",
+      "date": "12/6/2018",
       "author": "",
       "type": "ModelMeasure",
       "seed": "example_model.osm",
       "workflow_index": 2,
       "options": [],
-      "instanceId": 0.5447113532102064,
+      "instanceId": 0.5345216015959746,
       "skip": false,
       "$$hashKey": "object:7455",
       "showWarningText": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_temperature_setpoint",
+      "measure_dir": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/ambient_loop_temperature_setpoint",
       "name": "ambient_loop_temperature_setpoint",
-      "directory": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_temperature_setpoint",
+      "directory": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/ambient_loop_temperature_setpoint",
       "uid": "b7cf0cbd-f752-4e43-9c9c-62705a3b7613",
       "uuid": "{b7cf0cbd-f752-4e43-9c9c-62705a3b7613}",
       "version_id": "1d91a223-a7e4-4ad9-b706-a84d5c2addde",
@@ -633,16 +633,16 @@
       "seed": "example_model.osm",
       "workflow_index": 3,
       "options": [],
-      "instanceId": 0.6784478452539546,
+      "instanceId": 0.03809545090154076,
       "skip": false,
       "$$hashKey": "object:7456",
       "showWarningText": true,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/nlong/working-simulations/measures/ambient-loop-measures/hot_water_loop_design_temperature",
+      "measure_dir": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/hot_water_loop_design_temperature",
       "name": "hot_water_loop_design_temperature",
-      "directory": "/Users/nlong/working-simulations/measures/ambient-loop-measures/hot_water_loop_design_temperature",
+      "directory": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/hot_water_loop_design_temperature",
       "uid": "c4674445-7dad-4ba9-8b06-11028fd76904",
       "uuid": "{c4674445-7dad-4ba9-8b06-11028fd76904}",
       "version_id": "b1c318f6-c194-4914-9031-1642fecc8000",
@@ -701,16 +701,16 @@
       "seed": "example_model.osm",
       "workflow_index": 4,
       "options": [],
-      "instanceId": 0.7980644346151402,
+      "instanceId": 0.4660007880405246,
       "skip": false,
       "$$hashKey": "object:20553",
       "showWarningText": false,
       "outputMeasure": false
     },
     {
-      "measure_dir": "/Users/nlong/working-simulations/measures/ambient-loop-measures/internal_loads_multiplier",
+      "measure_dir": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/internal_loads_multiplier",
       "name": "internal_loads_multiplier",
-      "directory": "/Users/nlong/working-simulations/measures/ambient-loop-measures/internal_loads_multiplier",
+      "directory": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/internal_loads_multiplier",
       "uid": "8c10b18d-c66d-43dc-9ef5-b82dfed0edde",
       "uuid": "{8c10b18d-c66d-43dc-9ef5-b82dfed0edde}",
       "version_id": "8b9e078c-393a-44ad-a57b-c616827f0271",
@@ -823,7 +823,7 @@
       "seed": "example_model.osm",
       "workflow_index": 5,
       "options": [],
-      "instanceId": 0.5976433145785665,
+      "instanceId": 0.0791384467555063,
       "skip": false,
       "$$hashKey": "object:38343",
       "outputMeasure": false,
@@ -1787,7 +1787,7 @@
           "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
         }
       ],
-      "instanceId": 0.7889097906784157,
+      "instanceId": 0.41209373650176917,
       "numberOfOptions": 1,
       "$$hashKey": "object:1754",
       "descOpen": true,
@@ -2796,7 +2796,7 @@
           "description": "Option 1 Description: This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable."
         }
       ],
-      "instanceId": 0.003621887137736479,
+      "instanceId": 0.05367996944790465,
       "numberOfOptions": 1,
       "$$hashKey": "object:1755",
       "outputMeasure": false,
@@ -2804,9 +2804,9 @@
       "showWarningText": false
     },
     {
-      "measure_dir": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_reports",
+      "measure_dir": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/ambient_loop_reports",
       "name": "ambient_loop_reports",
-      "directory": "/Users/nlong/working-simulations/measures/ambient-loop-measures/ambient_loop_reports",
+      "directory": "/Users/nlong/working-simulations/projects/ambientloop/baseline_retail_ets/measures/ambient_loop_reports",
       "uid": "9b470a52-d218-4b50-80dd-d229ce73438d",
       "uuid": "{9b470a52-d218-4b50-80dd-d229ce73438d}",
       "version_id": "8c9136ba-30db-4731-95fd-c0bfe2b88a0b",
@@ -2907,7 +2907,7 @@
           "description": ""
         }
       ],
-      "instanceId": 0.3734911526509541,
+      "instanceId": 0.46505154079951283,
       "numberOfOptions": 1,
       "$$hashKey": "object:36491",
       "outputMeasure": false,
@@ -2992,6 +2992,6 @@
       "change_building_location": "None"
     }
   ],
-  "analysisID": null,
+  "analysisID": "",
   "datapoints": []
 }
