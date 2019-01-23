@@ -4,7 +4,7 @@
 # does not already exist.
 
 if [[ (-z $1) || (-z $2) || (-z $3) || (-z $4) ]] ; then
-    echo "Expecting script to have 3 parameters:"
+    echo "Expecting script to have 4 parameters:"
     echo "  1: Path to where OpenStudio is installed on the system. Docker: /usr/local/openstudio-2.7.1. OSX: /Applications/openstudio-2.7.0/Ruby" 
     echo "  2: Name of the exiting gem to replace, e.g. openstudio-standards"
     echo "  3: Argument of the new gem GitHub repo, e.g. NREL/openstudio-standards"
