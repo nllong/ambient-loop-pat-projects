@@ -1,0 +1,71 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>ambient_loop_temperature_setpoint</name>
+  <uid>b7cf0cbd-f752-4e43-9c9c-62705a3b7613</uid>
+  <version_id>1d91a223-a7e4-4ad9-b706-a84d5c2addde</version_id>
+  <version_modified>20180927T020400Z</version_modified>
+  <xml_checksum>1F3D2430</xml_checksum>
+  <class_name>AmbientLoopTemperatureSetpoint</class_name>
+  <display_name>Ambient Loop Temperature Setpoint</display_name>
+  <description>Set the temperature of the ambient loop to a specific value.</description>
+  <modeler_description>There are naming restrictions in this measure. Plant loop must be named 'Ambient Loop'</modeler_description>
+  <arguments>
+    <argument>
+      <name>setpoint_temperature</name>
+      <display_name>Ambient Loop Temperature</display_name>
+      <description>Temperature setpoint for Ambient Loop</description>
+      <type>Double</type>
+      <units>Degrees Celsius</units>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>20</default_value>
+    </argument>
+    <argument>
+      <name>design_delta</name>
+      <display_name>Delta Design Loop Temperature</display_name>
+      <description>Set the delta design temperature for the ambient loop</description>
+      <type>Double</type>
+      <units>Delta Temperature</units>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>5.55</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.Heating</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>ambient_loop_temperature_setpoint_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>2E4740E0</checksum>
+    </file>
+    <file>
+      <filename>wwhp-75.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>6E17E401</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>DACE890D</checksum>
+    </file>
+  </files>
+</measure>
