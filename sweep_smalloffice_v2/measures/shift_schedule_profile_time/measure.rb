@@ -3,11 +3,9 @@ Uniform = Rubystats::UniformDistribution
 require File.dirname(__FILE__) + '/resources/rubystats/normal_distribution.rb'
 Normal = Rubystats::NormalDistribution
 require File.dirname(__FILE__) + '/resources/triangular_distribution.rb'
-include Enumerable
 
 # start the measure
 class ShiftScheduleProfileTime < OpenStudio::Measure::ModelMeasure
-
   # define the name that a user will see, this method may be deprecated as
   # the display name in PAT comes from the name field in measure.xml
   def name
@@ -45,7 +43,7 @@ class ShiftScheduleProfileTime < OpenStudio::Measure::ModelMeasure
 
     # make an argument for schedule
     schedule = OpenStudio::Measure::OSArgument.makeChoiceArgument('schedule', schedule_handles, schedule_display_names, true)
-    schedule.setDisplayName('Schedule to Shift the Time For.')
+    schedule.setDisplayName('Choose a Schedule to Shift the Time For.')
     schedule.setDefaultValue('*All Ruleset Schedules*') # if no schedule is chosen this will run on all air loops
     args << schedule
 
@@ -62,7 +60,7 @@ class ShiftScheduleProfileTime < OpenStudio::Measure::ModelMeasure
     # make an argument for shift lower limit
     shift_ll = OpenStudio::Measure::OSArgument.makeDoubleArgument('shift_ll', true)
     shift_ll.setDisplayName('Shift Schedule Profiles Forward Lower Limit (24hr, use decimal for sub hour).')
-    shift_ll.setDefaultValue(1)
+    shift_ll.setDefaultValue(0)
     args << shift_ll
 
     # make an argument for shift upper limit
@@ -94,6 +92,7 @@ class ShiftScheduleProfileTime < OpenStudio::Measure::ModelMeasure
     shift_ll = runner.getDoubleArgumentValue('shift_ll', user_arguments)
     shift_ul = runner.getDoubleArgumentValue('shift_ul', user_arguments)
     shift_ct = runner.getDoubleArgumentValue('shift_ct', user_arguments)
+
 
     # check the schedule for reasonableness
     apply_to_all_schedules = false
@@ -128,6 +127,8 @@ class ShiftScheduleProfileTime < OpenStudio::Measure::ModelMeasure
     else
       shift_value = trirng(shift_ct, shift_ll, shift_ul)
     end
+
+    shift_value = shift_value.round(2)
 
     # check shift value for reasonableness
     if (shift_value / 24) == (shift_value / 24).to_i
@@ -190,7 +191,7 @@ class ShiftScheduleProfileTime < OpenStudio::Measure::ModelMeasure
         times = day_sch.times
         values = day_sch.values
 
-        # time objects to use in measure
+        # time objects to use in meausre
         time_0 = OpenStudio::Time.new(0, 0, 0, 0)
         time_24 =  OpenStudio::Time.new(0, 24, 0, 0)
         shift_time = OpenStudio::Time.new(0, shift_hours, shift_minutes, 0)

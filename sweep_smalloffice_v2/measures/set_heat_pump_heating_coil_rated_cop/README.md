@@ -21,7 +21,7 @@ ModelMeasure
 
 ### Cooling Coil Rated COP
 Set the heat pump's heating coil rated COP to this value.
-**Name:** cop,
+**Name:** heat_cop,
 **Type:** Double,
 **Units:** ,
 **Required:** true,

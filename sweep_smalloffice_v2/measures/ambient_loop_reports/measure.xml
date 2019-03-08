@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>ambient_loop_reports</name>
   <uid>9b470a52-d218-4b50-80dd-d229ce73438d</uid>
-  <version_id>8c9136ba-30db-4731-95fd-c0bfe2b88a0b</version_id>
-  <version_modified>20181203T222605Z</version_modified>
+  <version_id>7b5763ec-8502-477b-9941-21a4211cd7e7</version_id>
+  <version_modified>20190308T081724Z</version_modified>
   <xml_checksum>15BF4E57</xml_checksum>
   <class_name>AmbientLoopReports</class_name>
   <display_name>Ambient Loop Reports</display_name>

@@ -19,9 +19,9 @@ ModelMeasure
 ## Arguments
 
 
-### Insulation R-value (ft^2*h*R/Btu).
+### Roof Insulation R-value (ft^2*h*R/Btu)
 
-**Name:** r_value,
+**Name:** roof_r,
 **Type:** Double,
 **Units:** ,
 **Required:** true,

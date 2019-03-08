@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_roof_insulation_r_value</name>
   <uid>65b798f4-207f-4aed-987a-386c865d0ccd</uid>
-  <version_id>2e6129b4-cdef-4af1-a17d-3c38a7ef770c</version_id>
-  <version_modified>20190304T072810Z</version_modified>
+  <version_id>017a60d6-3ce9-47df-9bc8-19f517306b54</version_id>
+  <version_modified>20190308T074955Z</version_modified>
   <xml_checksum>0F858D9E</xml_checksum>
   <class_name>SetRoofInsulationRValue</class_name>
   <display_name>Set Roof Insulation R Value</display_name>
@@ -12,7 +12,7 @@
   </modeler_description>
   <arguments>
     <argument>
-      <name>r_value</name>
+      <name>roof_r</name>
       <display_name>Roof Insulation R-value (ft^2*h*R/Btu)</display_name>
       <type>Double</type>
       <required>true</required>
@@ -87,13 +87,13 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>DE48AA65</checksum>
+      <checksum>E8423463</checksum>
     </file>
     <file>
       <filename>README.md</filename>
       <filetype>md</filetype>
       <usage_type>readme</usage_type>
-      <checksum>A0F08D03</checksum>
+      <checksum>C94F5216</checksum>
     </file>
   </files>
 </measure>

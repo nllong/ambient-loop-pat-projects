@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>ambient_loop_prototype_building_by_location</name>
   <uid>eed65df5-3517-44d5-8ecd-35631aadcc24</uid>
-  <version_id>70571e2f-e1c1-4e84-813a-d6b54a0d7e92</version_id>
-  <version_modified>20181224T071756Z</version_modified>
+  <version_id>bce99553-beb5-4dec-8943-eb563cd2443d</version_id>
+  <version_modified>20190304T072810Z</version_modified>
   <xml_checksum>2C38F48B</xml_checksum>
   <class_name>AmbientLoopPrototypeBuildingByLocation</class_name>
   <display_name>Ambient Loop Prototype Building By Location</display_name>
@@ -12,7 +12,7 @@
   <arguments>
     <argument>
       <name>building_type</name>
-      <display_name>Building Type.</display_name>
+      <display_name>Building Type</display_name>
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
@@ -86,7 +86,7 @@
     </argument>
     <argument>
       <name>template</name>
-      <display_name>Template.</display_name>
+      <display_name>Template</display_name>
       <type>Choice</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
@@ -145,17 +145,6 @@
   </attributes>
   <files>
     <file>
-      <version>
-        <software_program>OpenStudio</software_program>
-        <identifier>2.5.0</identifier>
-        <min_compatible>2.5.0</min_compatible>
-      </version>
-      <filename>measure.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>script</usage_type>
-      <checksum>2EEBF095</checksum>
-    </file>
-    <file>
       <filename>epw.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
@@ -172,6 +161,17 @@
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
       <checksum>FA04CAFA</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.5.0</identifier>
+        <min_compatible>2.5.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>A553AFA9</checksum>
     </file>
   </files>
 </measure>

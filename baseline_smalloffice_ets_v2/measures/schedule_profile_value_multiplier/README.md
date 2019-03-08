@@ -2,7 +2,7 @@
 
 ###### (Automatically generated documentation)
 
-# Shift Schedule Profile Time
+# Schedule Profile Value Multiplier
 
 ## Description
 
@@ -19,7 +19,7 @@ ModelMeasure
 ## Arguments
 
 
-### Schedule to Shift the Time For.
+### Schedule to Multiply the Values For.
 
 **Name:** schedule,
 **Type:** Choice,
@@ -35,25 +35,25 @@ ModelMeasure
 **Required:** true,
 **Model Dependent:** false
 
-### Shift Schedule Profiles Forward Lower Limit (24hr, use decimal for sub hour).
+### Schedule Profiles Values Multiplier Lower Limit.
 
-**Name:** shift_ll,
+**Name:** mult_ll,
 **Type:** Double,
 **Units:** ,
 **Required:** true,
 **Model Dependent:** false
 
-### Shift Schedule Profiles Forward Upper Limit (24hr, use decimal for sub hour).
+### Schedule Profiles Values Multiplier Upper Limit.
 
-**Name:** shift_ul,
+**Name:** mult_ul,
 **Type:** Double,
 **Units:** ,
 **Required:** true,
 **Model Dependent:** false
 
-### Shift Schedule Profiles Peak for Triangular Distribution.
+### Schedule Values Multiplier Peak for Triangular Distribution.
 
-**Name:** shift_ct,
+**Name:** mult_ct,
 **Type:** Double,
 **Units:** ,
 **Required:** false,

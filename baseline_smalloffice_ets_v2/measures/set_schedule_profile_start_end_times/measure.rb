@@ -115,6 +115,8 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
     new_end = runner.getIntegerArgumentValue('new_end', user_arguments)
     new_dur = new_end - new_start
 
+    runner.registerInfo("The new schedule duration is #{new_dur}")
+
     # check the schedule for reasonableness
     apply_to_all_schedules = false
     if schedule.empty?

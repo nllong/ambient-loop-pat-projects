@@ -45,10 +45,10 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
     args = OpenStudio::Measure::OSArgumentVector.new
 
     # make an argument insulation R-value
-    r_value = OpenStudio::Measure::OSArgument.makeDoubleArgument('r_value', true)
-    r_value.setDisplayName('Exterior Wall Insulation R-value (ft^2*h*R/Btu)')
-    r_value.setDefaultValue(13.0)
-    args << r_value
+    wall_r = OpenStudio::Measure::OSArgument.makeDoubleArgument('wall_r', true)
+    wall_r.setDisplayName('Exterior Wall Insulation R-value (ft^2*h*R/Btu)')
+    wall_r.setDefaultValue(13.0)
+    args << wall_r
 
     return args
   end
@@ -63,19 +63,19 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
     end
 
     # assign the user input to variable
-    r_value = runner.getDoubleArgumentValue('r_value', user_arguments)
+    wall_r = runner.getDoubleArgumentValue('wall_r', user_arguments)
 
     # set limit for minimum insulation. This is used to limit input and for inferring insulation layer in construction.
     min_expected_r_value_ip = 1 # ip units
 
     # check the R-value for reasonableness
-    if (r_value < 0) || (r_value > 500)
-      runner.registerError("The requested wall insulation R-value of #{r_value} ft^2*h*R/Btu was above the measure limit.")
+    if (wall_r < 0) || (wall_r > 500)
+      runner.registerError("The requested wall insulation R-value of #{wall_r} ft^2*h*R/Btu was above the measure limit.")
       return false
-    elsif r_value > 40
-      runner.registerWarning("The requested wall insulation R-value of #{r_value} ft^2*h*R/Btu is abnormally high.")
-    elsif r_value < min_expected_r_value_ip
-      runner.registerWarning("The requested wall insulation R-value of #{r_value} ft^2*h*R/Btu is abnormally low.")
+    elsif wall_r > 40
+      runner.registerWarning("The requested wall insulation R-value of #{wall_r} ft^2*h*R/Btu is abnormally high.")
+    elsif wall_r < min_expected_r_value_ip
+      runner.registerWarning("The requested wall insulation R-value of #{wall_r} ft^2*h*R/Btu is abnormally low.")
     end
 
     # short def to make numbers pretty (converts 4125001.25641 to 4,125,001.26 or 4,125,001). The definition be called through this measure
@@ -94,8 +94,8 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
       converted_number = OpenStudio.convert(OpenStudio::Quantity.new(number, OpenStudio.createUnit(from_unit_string).get), OpenStudio.createUnit(to_unit_string).get).get.value
     end
 
-    # convert r_value to si for future use
-    r_value_si = unit_helper(r_value, 'ft^2*h*R/Btu', 'm^2*K/W')
+    # convert wall_r to si for future use
+    r_value_si = unit_helper(wall_r, 'ft^2*h*R/Btu', 'm^2*K/W')
 
     # create an array of exterior walls and find range of starting construction R-value (not just insulation layer)
     surfaces = model.getSurfaces
@@ -147,20 +147,20 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
       materials_in_construction = construction_layers.map.with_index {|layer, i| {"name"=>layer.name.to_s,
                                                                        "index"=>i,
                                                                        "nomass"=>!layer.to_MasslessOpaqueMaterial.empty?,
-                                                                       "r_value"=>layer.to_OpaqueMaterial.get.thermalResistance,
+                                                                       "wall_r"=>layer.to_OpaqueMaterial.get.thermalResistance,
                                                                        "mat"=>layer}}
 
       no_mass_materials = materials_in_construction.select {|mat| mat["nomass"] == true}
       # measure will select the no mass material with the highest r-value as the insulation layer
       # if no mass materials are present, the measure will select the material with the highest r-value per inch
       if !no_mass_materials.empty?
-        thermal_resistance_values = no_mass_materials.map {|mat| mat["r_value"]}
-        max_mat_hash = no_mass_materials.select {|mat| mat["r_value"] >= thermal_resistance_values.max}
+        thermal_resistance_values = no_mass_materials.map {|mat| mat["wall_r"]}
+        max_mat_hash = no_mass_materials.select {|mat| mat["wall_r"] >= thermal_resistance_values.max}
       else
-        thermal_resistance_per_thickness_values = materials_in_construction.map {|mat| mat["r_value"] / mat["mat"].thickness}
+        thermal_resistance_per_thickness_values = materials_in_construction.map {|mat| mat["wall_r"] / mat["mat"].thickness}
         target_index = thermal_resistance_per_thickness_values.index(thermal_resistance_per_thickness_values.max)
         max_mat_hash = materials_in_construction.select {|mat| mat["index"] == target_index}
-        thermal_resistance_values = materials_in_construction.map {|mat| mat["r_value"]}
+        thermal_resistance_values = materials_in_construction.map {|mat| mat["wall_r"]}
       end
       max_thermal_resistance_material = max_mat_hash[0]["mat"]
       max_thermal_resistance_material_index = max_mat_hash[0]["index"]
@@ -198,7 +198,7 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
         if found_material == false
           new_material = max_thermal_resistance_material.clone(model)
           new_material = new_material.to_OpaqueMaterial.get
-          new_material.setName("#{max_thermal_resistance_material.name}_R-value #{r_value} (ft^2*h*R/Btu)")
+          new_material.setName("#{max_thermal_resistance_material.name}_R-value #{wall_r} (ft^2*h*R/Btu)")
           materials_hash[max_thermal_resistance_material.name.to_s] = new_material
           final_construction.eraseLayer(max_thermal_resistance_material_index)
           final_construction.insertLayer(max_thermal_resistance_material_index, new_material)
@@ -329,7 +329,7 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
     end
 
     # report final condition
-    runner.registerFinalCondition("The existing insulation for exterior walls was set to R-#{r_value}. This was applied to #{neat_numbers(affected_area_ip, 0)} (ft^2) across #{final_string.size} exterior wall constructions: #{final_string.sort.join(', ')}.")
+    runner.registerFinalCondition("The existing insulation for exterior walls was set to R-#{wall_r}. This was applied to #{neat_numbers(affected_area_ip, 0)} (ft^2) across #{final_string.size} exterior wall constructions: #{final_string.sort.join(', ')}.")
 
     return true
   end

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>ambient_loop_temperature_setpoint</name>
   <uid>b7cf0cbd-f752-4e43-9c9c-62705a3b7613</uid>
-  <version_id>1d91a223-a7e4-4ad9-b706-a84d5c2addde</version_id>
-  <version_modified>20180927T020400Z</version_modified>
+  <version_id>db323978-64d0-419f-8e71-4df40b83b226</version_id>
+  <version_modified>20190304T072810Z</version_modified>
   <xml_checksum>1F3D2430</xml_checksum>
   <class_name>AmbientLoopTemperatureSetpoint</class_name>
   <display_name>Ambient Loop Temperature Setpoint</display_name>
@@ -13,7 +13,7 @@
     <argument>
       <name>setpoint_temperature</name>
       <display_name>Ambient Loop Temperature</display_name>
-      <description>Temperature setpoint for Ambient Loop</description>
+      <description>Temperature setpoint for the ambient loop</description>
       <type>Double</type>
       <units>Degrees Celsius</units>
       <required>true</required>
@@ -23,7 +23,7 @@
     <argument>
       <name>design_delta</name>
       <display_name>Delta Design Loop Temperature</display_name>
-      <description>Set the delta design temperature for the ambient loop</description>
+      <description>Delta design temperature for the ambient loop</description>
       <type>Double</type>
       <units>Delta Temperature</units>
       <required>true</required>
@@ -65,7 +65,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>DACE890D</checksum>
+      <checksum>12937BB2</checksum>
     </file>
   </files>
 </measure>

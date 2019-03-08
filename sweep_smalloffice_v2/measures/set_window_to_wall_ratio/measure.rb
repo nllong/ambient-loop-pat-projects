@@ -22,13 +22,13 @@ class SetWindowToWallRatio < OpenStudio::Ruleset::ModelUserScript
 
     # make double argument for wwr
     wwr = OpenStudio::Ruleset::OSArgument::makeDoubleArgument("wwr",true)
-    wwr.setDisplayName("Window to Wall Ratio (fraction).")
+    wwr.setDisplayName("Window to Wall Ratio (fraction)")
     wwr.setDefaultValue(0.2)
     args << wwr
 
     # make double argument for sillHeight
     sillHeight = OpenStudio::Ruleset::OSArgument::makeDoubleArgument("sillHeight",true)
-    sillHeight.setDisplayName("Sill Height (in).")
+    sillHeight.setDisplayName("Sill Height (in)")
     sillHeight.setDefaultValue(30.0)
     args << sillHeight
 

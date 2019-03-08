@@ -27,7 +27,7 @@ ModelMeasure
 **Required:** true,
 **Model Dependent:** false
 
-### Schedule New Starting Point (hr)
+### Schedule Start (hr)
 
 **Name:** new_start,
 **Type:** Integer,
@@ -35,7 +35,7 @@ ModelMeasure
 **Required:** true,
 **Model Dependent:** false
 
-### Schedule New Ending Point (hr)
+### Schedule End (hr)
 
 **Name:** new_end,
 **Type:** Integer,

@@ -37,7 +37,7 @@ class AmbientLoopPrototypeBuildingByLocation < OpenStudio::Measure::ModelMeasure
     building_type_chs << 'Hospital'
     building_type_chs << 'Outpatient'
     building_type = OpenStudio::Measure::OSArgument.makeChoiceArgument('building_type', building_type_chs, true)
-    building_type.setDisplayName('Building Type.')
+    building_type.setDisplayName('Building Type')
     building_type.setDefaultValue('SmallOffice')
     args << building_type
 
@@ -52,7 +52,7 @@ class AmbientLoopPrototypeBuildingByLocation < OpenStudio::Measure::ModelMeasure
     template_chs << '90.1-2013'
     template_chs << 'NECB 2011'
     template = OpenStudio::Measure::OSArgument.makeChoiceArgument('template', template_chs, true)
-    template.setDisplayName('Template.')
+    template.setDisplayName('Template')
     template.setDefaultValue('90.1-2010')
     args << template
 
@@ -198,7 +198,7 @@ class AmbientLoopPrototypeBuildingByLocation < OpenStudio::Measure::ModelMeasure
     water_temp.setMaximumDifferenceInMonthlyAverageOutdoorAirTemperatures(stat_model.delta_dry_bulb)
     runner.registerInfo("mean dry bulb is #{stat_model.mean_dry_bulb}")
 
-    # remove all the Design Day objects that are in the file
+    # remove all the DesignDay objects that are in the file
     model.getObjectsByType('OS:SizingPeriod:DesignDay'.to_IddObjectType).each(&:remove)
 
     # find the ddy files

@@ -20,14 +20,14 @@ class AmbientLoopTemperatureSetpoint < OpenStudio::Ruleset::ModelUserScript
     setpoint.setUnits("Degrees Celsius")
     setpoint.setDisplayName("Ambient Loop Temperature")
     setpoint.setDefaultValue(20)
-    setpoint.setDescription("Temperature setpoint for Ambient Loop")
+    setpoint.setDescription("Temperature setpoint for the ambient loop")
     args << setpoint
 
     delta = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("design_delta", true)
     delta.setUnits("Delta Temperature")
     delta.setDefaultValue(5.55) # 10 Deg F default delta
     delta.setDisplayName("Delta Design Loop Temperature")
-    delta.setDescription("Set the delta design temperature for the ambient loop")
+    delta.setDescription("Delta design temperature for the ambient loop")
     args << delta
 
     return args

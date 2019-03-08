@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_window_to_wall_ratio</name>
   <uid>73ac3246-3170-4853-bed9-0ca14ea7981c</uid>
-  <version_id>b81b1cbe-5b74-4435-b1af-ec7e9c191873</version_id>
-  <version_modified>20181210T022210Z</version_modified>
+  <version_id>68a81245-27ce-408c-9b30-59f84f44555d</version_id>
+  <version_modified>20190304T073737Z</version_modified>
   <xml_checksum>7308DE72</xml_checksum>
   <class_name>SetWindowToWallRatio</class_name>
   <display_name>Set Window to Wall Ratio</display_name>
@@ -12,7 +12,7 @@
   <arguments>
     <argument>
       <name>wwr</name>
-      <display_name>Window to Wall Ratio (fraction).</display_name>
+      <display_name>Window to Wall Ratio (fraction)</display_name>
       <type>Double</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
@@ -20,7 +20,7 @@
     </argument>
     <argument>
       <name>sillHeight</name>
-      <display_name>Sill Height (in).</display_name>
+      <display_name>Sill Height (in)</display_name>
       <type>Double</type>
       <required>true</required>
       <model_dependent>false</model_dependent>
@@ -94,7 +94,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>A9F6DB04</checksum>
+      <checksum>7DC8F52D</checksum>
     </file>
   </files>
 </measure>

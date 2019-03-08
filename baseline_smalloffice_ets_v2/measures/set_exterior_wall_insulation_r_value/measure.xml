@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_exterior_wall_insulation_r_value</name>
   <uid>3fdf9c39-d305-449b-a4b5-077166af5a67</uid>
-  <version_id>132b10f8-224a-4429-b050-70ec1dece6f8</version_id>
-  <version_modified>20190304T072810Z</version_modified>
+  <version_id>706f5d2b-3e97-4b2b-b2a8-550603f5f214</version_id>
+  <version_modified>20190308T074955Z</version_modified>
   <xml_checksum>0F858D9E</xml_checksum>
   <class_name>SetExteriorWallInsulationRValue</class_name>
   <display_name>Set Exterior Wall Insulation R Value</display_name>
@@ -12,7 +12,7 @@
   </modeler_description>
   <arguments>
     <argument>
-      <name>r_value</name>
+      <name>wall_r</name>
       <display_name>Exterior Wall Insulation R-value (ft^2*h*R/Btu)</display_name>
       <type>Double</type>
       <required>true</required>
@@ -93,13 +93,13 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>1B0A62BF</checksum>
+      <checksum>EBEC2778</checksum>
     </file>
     <file>
       <filename>README.md</filename>
       <filetype>md</filetype>
       <usage_type>readme</usage_type>
-      <checksum>29E31BF2</checksum>
+      <checksum>D388F8D8</checksum>
     </file>
   </files>
 </measure>

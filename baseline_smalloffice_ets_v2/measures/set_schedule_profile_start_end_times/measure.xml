@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_schedule_profile_start_end_times</name>
   <uid>d7477df5-e482-44be-9be5-fe9875013229</uid>
-  <version_id>640f4610-0e47-4b98-bcaa-a1f11bd2927f</version_id>
-  <version_modified>20190304T073740Z</version_modified>
+  <version_id>ded79919-d108-4815-b8be-533c219679ed</version_id>
+  <version_modified>20190308T081724Z</version_modified>
   <xml_checksum>03F02484</xml_checksum>
   <class_name>SetScheduleProfileStartEndTimes</class_name>
   <display_name>Set Schedule Profile Start End Times</display_name>
@@ -19,7 +19,7 @@
       <default_value>*All Ruleset Schedules*</default_value>
       <choices>
         <choice>
-          <value>{2687d37b-49b3-4cd0-8e3e-542541151594}</value>
+          <value>{3a1fb975-6052-4010-8d4d-3875ceaf810b}</value>
           <display_name>*All Ruleset Schedules*</display_name>
         </choice>
       </choices>
@@ -85,6 +85,12 @@
       <checksum>53D14E69</checksum>
     </file>
     <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>78603045</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.7.1</identifier>
@@ -93,13 +99,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>E557B063</checksum>
-    </file>
-    <file>
-      <filename>README.md</filename>
-      <filetype>md</filetype>
-      <usage_type>readme</usage_type>
-      <checksum>78603045</checksum>
+      <checksum>05C8ABE7</checksum>
     </file>
   </files>
 </measure>
