@@ -59,9 +59,6 @@ docker-compose scale worker=n
 * It is helpful to remove PAT's running instance of PAT to save resources. To stop PAT from spinning up resources make sure to run the following command line a few seconds after launching and loading your PAT project.
 
 ```bash
-
-./mongod --port 27018 --logpath
-
 for KILLPID in `ps ax | grep -e 'ParametricAnalysisTool.app.Contents.Resources.ruby.bin.ruby' -e 'mongod.*--logpath' -e 'delayed_job' -e 'rails' | grep -v grep | awk '{print $1;}'`; do 
 	echo "Killing process $KILLPID"
 	kill -9 $KILLPID;
