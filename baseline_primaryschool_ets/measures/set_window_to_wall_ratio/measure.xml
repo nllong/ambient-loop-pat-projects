@@ -1,0 +1,100 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>set_window_to_wall_ratio</name>
+  <uid>73ac3246-3170-4853-bed9-0ca14ea7981c</uid>
+  <version_id>68a81245-27ce-408c-9b30-59f84f44555d</version_id>
+  <version_modified>20190304T073737Z</version_modified>
+  <xml_checksum>7308DE72</xml_checksum>
+  <class_name>SetWindowToWallRatio</class_name>
+  <display_name>Set Window to Wall Ratio</display_name>
+  <description>Set the window to wall ratio for all facades to a specific value.</description>
+  <modeler_description>This measure identifies exterior surfaces. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results. The measure doesn't have any cost or lifecycle arguments, however if lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.</modeler_description>
+  <arguments>
+    <argument>
+      <name>wwr</name>
+      <display_name>Window to Wall Ratio (fraction)</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>0.2</default_value>
+    </argument>
+    <argument>
+      <name>sillHeight</name>
+      <display_name>Sill Height (in)</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>30</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>Envelope.Fenestration</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Function</name>
+      <value>Measure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Requires EnergyPlus Results</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Uses SketchUp API</name>
+      <value>false</value>
+      <datatype>boolean</datatype>
+    </attribute>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>EnvelopeAndLoadTestModel_01.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>8F651078</checksum>
+    </file>
+    <file>
+      <filename>ReverseTranslatedModel.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>0B94403D</checksum>
+    </file>
+    <file>
+      <filename>EnvelopeAndLoadTestModel_02_RotatedSpaceAndBuilding.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>74A6EE8C</checksum>
+    </file>
+    <file>
+      <filename>test.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>7D0E12A4</checksum>
+    </file>
+    <file>
+      <filename>SetWindowToWallRatioByFacade_Test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>43272B4D</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>0.10.2</identifier>
+        <min_compatible>1.8.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>7DC8F52D</checksum>
+    </file>
+  </files>
+</measure>

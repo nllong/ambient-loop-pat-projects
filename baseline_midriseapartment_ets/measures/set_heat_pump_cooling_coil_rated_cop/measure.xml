@@ -1,0 +1,78 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>set_heat_pump_cooling_coil_rated_cop</name>
+  <uid>9d74eeb6-9557-4d83-a96a-c5b8bfa1b6d2</uid>
+  <version_id>e6c8a742-1e31-439e-8aaa-29726fd1c3ad</version_id>
+  <version_modified>20190308T074955Z</version_modified>
+  <xml_checksum>8CBDDA1B</xml_checksum>
+  <class_name>SetHeatPumpCoolingCoilRatedCop</class_name>
+  <display_name>Set Heat Pump Cooling Coil Rated COP</display_name>
+  <description>Set heat pump cooling coil gross rated COP.</description>
+  <modeler_description>Set heat pump cooling coil gross rated COP.</modeler_description>
+  <arguments>
+    <argument>
+      <name>cool_cop</name>
+      <display_name>Cooling Coil Rated COP</display_name>
+      <description>Set the heat pump's cooling coil rated COP to this value.</description>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>3.65</default_value>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.Cooling</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>CD7F5672</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>set_heat_pump_cooling_coil_rated_cop_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>45B6CA90</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.7.1</identifier>
+        <min_compatible>2.7.1</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>805836D2</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>6BCFA3A8</checksum>
+    </file>
+  </files>
+</measure>

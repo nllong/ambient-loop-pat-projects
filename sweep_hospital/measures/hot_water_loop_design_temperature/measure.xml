@@ -1,0 +1,59 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>hot_water_loop_design_temperature</name>
+  <uid>c4674445-7dad-4ba9-8b06-11028fd76904</uid>
+  <version_id>b1c318f6-c194-4914-9031-1642fecc8000</version_id>
+  <version_modified>20180927T020350Z</version_modified>
+  <xml_checksum>1F3D2430</xml_checksum>
+  <class_name>HotWaterLoopDesignTemperature</class_name>
+  <display_name>Hot Water Loop Design Temperature</display_name>
+  <description>Set the design temperature of the Hot Water Loop to the specified value.</description>
+  <modeler_description>The name of the loop must be 'Hot Water Loop'</modeler_description>
+  <arguments>
+    <argument>
+      <name>hot_water_temperature</name>
+      <display_name>Hot Water Temperature</display_name>
+      <description>Design temperature of the hot water loop. Name must be Hot Water Loop</description>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.Heating</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>hot_water_loop_design_temperature_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>EB2ED91E</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.3.0</identifier>
+        <min_compatible>2.3.0</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>1CC07F2B</checksum>
+    </file>
+  </files>
+</measure>
