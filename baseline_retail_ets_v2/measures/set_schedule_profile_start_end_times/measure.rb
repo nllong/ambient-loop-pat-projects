@@ -144,7 +144,9 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
       raw_schedules = model.getScheduleRulesets
       raw_schedules.each do |raw_schedule|
         if raw_schedule.directUseCount > 0
-          schedules << raw_schedule
+          if raw_schedule.name.get["OCC_SCH"] or raw_schedule.name.get["LIGHT_SCH"] or raw_schedule.name.get["EQUIP_SCH"] or raw_schedule.name.get["ACTIVITY_SCH"]
+            schedules << raw_schedule
+            end
         end
       end
 

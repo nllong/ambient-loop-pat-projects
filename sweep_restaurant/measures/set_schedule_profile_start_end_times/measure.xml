@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_schedule_profile_start_end_times</name>
   <uid>d7477df5-e482-44be-9be5-fe9875013229</uid>
-  <version_id>ded79919-d108-4815-b8be-533c219679ed</version_id>
-  <version_modified>20190308T081724Z</version_modified>
+  <version_id>ade842ca-0fe8-43b6-9c85-6479491ca0b9</version_id>
+  <version_modified>20190322T194434Z</version_modified>
   <xml_checksum>03F02484</xml_checksum>
   <class_name>SetScheduleProfileStartEndTimes</class_name>
   <display_name>Set Schedule Profile Start End Times</display_name>
@@ -19,7 +19,7 @@
       <default_value>*All Ruleset Schedules*</default_value>
       <choices>
         <choice>
-          <value>{3a1fb975-6052-4010-8d4d-3875ceaf810b}</value>
+          <value>{2bebdb20-c832-415c-b090-7c7f04f5b404}</value>
           <display_name>*All Ruleset Schedules*</display_name>
         </choice>
       </choices>
@@ -99,7 +99,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>05C8ABE7</checksum>
+      <checksum>19258850</checksum>
     </file>
   </files>
 </measure>
