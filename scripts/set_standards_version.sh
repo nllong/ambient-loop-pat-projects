@@ -50,6 +50,14 @@ mkdir -p $NEW_GEMFILE_DIR
 # Gemfile for OpenStudio
 NEW_GEMFILE=$NEW_GEMFILE_DIR/Gemfile
 
+# Clone the new gem with single branch. This can save a lot of time (e.g., standards 5m5.393s to 0m51.276s)
+mkdir -p $NEW_GEMFILE_DIR/clones
+if [ -d "$NEW_GEMFILE_DIR/clones/$EXISTING_GEM" ]; then
+  cd $NEW_GEMFILE_DIR/clones/$EXISTING_GEM && git pull
+else
+  git clone https://github.com/$NEW_GEM_REPO.git --branch $NEW_GEM_BRANCH --single-branch $NEW_GEMFILE_DIR/clones/$EXISTING_GEM
+fi
+
 # Update gem definition in OpenStudio Gemfile
 # Replace:
 # gem 'openstudio-standards', '= 0.1.15'
@@ -58,8 +66,8 @@ echo "***Replacing gem:"
 echo "$OLDGEM"
 
 # With this:
-# gem 'openstudio-standards', github: 'NREL/openstudio-standards', branch: 'PNNL'
-NEWGEM="gem '$EXISTING_GEM', github: '$NEW_GEM_REPO', branch: '$NEW_GEM_BRANCH'"
+# gem 'openstudio-standards', path: '/var/oscli/clones/openstudio-standards'
+NEWGEM="gem '$EXISTING_GEM', path: '$NEW_GEMFILE_DIR/clones/$EXISTING_GEM'"
 echo "***With gem:"
 echo "$NEWGEM"
 
