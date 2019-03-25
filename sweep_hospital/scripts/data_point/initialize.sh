@@ -4,7 +4,7 @@
 # does not already exist.
 
 if [[ (-z $1) || (-z $2) || (-z $3) || (-z $4) ]] ; then
-    echo "Expecting script to have 3 parameters:"
+    echo "Expecting script to have 4 parameters:"
     echo "  1: Path to where OpenStudio is installed on the system. Docker: /usr/local/openstudio-2.7.1. OSX: /Applications/openstudio-2.7.0/Ruby" 
     echo "  2: Name of the exiting gem to replace, e.g. openstudio-standards"
     echo "  3: Argument of the new gem GitHub repo, e.g. NREL/openstudio-standards"
@@ -50,6 +50,14 @@ mkdir -p $NEW_GEMFILE_DIR
 # Gemfile for OpenStudio
 NEW_GEMFILE=$NEW_GEMFILE_DIR/Gemfile
 
+# Clone the new gem with single branch. This can save a lot of time (e.g., standards 5m5.393s to 0m51.276s)
+mkdir -p $NEW_GEMFILE_DIR/clones
+if [ -d "$NEW_GEMFILE_DIR/clones/$EXISTING_GEM" ]; then
+  cd $NEW_GEMFILE_DIR/clones/$EXISTING_GEM && git pull
+else
+  git clone https://github.com/$NEW_GEM_REPO.git --branch $NEW_GEM_BRANCH --single-branch $NEW_GEMFILE_DIR/clones/$EXISTING_GEM
+fi
+
 # Update gem definition in OpenStudio Gemfile
 # Replace:
 # gem 'openstudio-standards', '= 0.1.15'
@@ -58,8 +66,8 @@ echo "***Replacing gem:"
 echo "$OLDGEM"
 
 # With this:
-# gem 'openstudio-standards', github: 'NREL/openstudio-standards', branch: 'PNNL'
-NEWGEM="gem '$EXISTING_GEM', github: '$NEW_GEM_REPO', branch: '$NEW_GEM_BRANCH'"
+# gem 'openstudio-standards', path: '/var/oscli/clones/openstudio-standards'
+NEWGEM="gem '$EXISTING_GEM', path: '$NEW_GEMFILE_DIR/clones/$EXISTING_GEM'"
 echo "***With gem:"
 echo "$NEWGEM"
 
