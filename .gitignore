@@ -9,11 +9,13 @@
 */Ambient Loop *.json
 */baseline*.zip
 */baseline*.json
+*/test_cluster.json
 */sweep*.json
 */sweep*.zip
 */test_results/
 */tests/output/*
-*/local_configuration.json
+**/local_configuration.*
+**/server.pid
 **/data_point/initialize.args
 **/analysis/initialize.args
 *.swp
