@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>set_exterior_wall_insulation_r_value</name>
   <uid>3fdf9c39-d305-449b-a4b5-077166af5a67</uid>
-  <version_id>706f5d2b-3e97-4b2b-b2a8-550603f5f214</version_id>
-  <version_modified>20190308T074955Z</version_modified>
+  <version_id>ad2ad825-b9ef-463c-aa25-fde1b5492e05</version_id>
+  <version_modified>20190325T230255Z</version_modified>
   <xml_checksum>0F858D9E</xml_checksum>
   <class_name>SetExteriorWallInsulationRValue</class_name>
   <display_name>Set Exterior Wall Insulation R Value</display_name>
@@ -85,6 +85,12 @@
       <checksum>ED7BDC6C</checksum>
     </file>
     <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>D388F8D8</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.0.0</identifier>
@@ -93,13 +99,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>EBEC2778</checksum>
-    </file>
-    <file>
-      <filename>README.md</filename>
-      <filetype>md</filetype>
-      <usage_type>readme</usage_type>
-      <checksum>D388F8D8</checksum>
+      <checksum>1ED12396</checksum>
     </file>
   </files>
 </measure>

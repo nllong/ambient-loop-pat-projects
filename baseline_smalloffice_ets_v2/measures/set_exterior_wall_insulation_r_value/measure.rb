@@ -168,8 +168,6 @@ class SetExteriorWallInsulationRValue < OpenStudio::Measure::ModelMeasure
 
       if max_thermal_resistance <= unit_helper(min_expected_r_value_ip, 'ft^2*h*R/Btu', 'm^2*K/W')
         runner.registerWarning("Construction '#{exterior_surface_construction.name}' does not appear to have an insulation layer and was not altered.")
-      elsif (max_thermal_resistance >= r_value_si) && !allow_reduction
-        runner.registerInfo("The insulation layer of construction #{exterior_surface_construction.name} exceeds the requested R-Value. It was not altered.")
       else
         # clone the construction
         final_construction = exterior_surface_construction.clone(model)
