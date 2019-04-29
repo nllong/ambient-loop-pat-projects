@@ -87,13 +87,13 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
 
     # make an argument for schedule lower limit
     new_start = OpenStudio::Measure::OSArgument.makeIntegerArgument('new_start', true)
-    new_start.setDisplayName('Schedule New Starting Point (hr)')
+    new_start.setDisplayName('Schedule Start (hr)')
     new_start.setDefaultValue(8)
     args << new_start
 
     # make an argument for shift upper limit
     new_end = OpenStudio::Measure::OSArgument.makeIntegerArgument('new_end', true)
-    new_end.setDisplayName('Schedule New Ending Point (hr)')
+    new_end.setDisplayName('Schedule End (hr)')
     new_end.setDefaultValue(18)
     args << new_end
 
@@ -115,7 +115,7 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
     new_end = runner.getIntegerArgumentValue('new_end', user_arguments)
     new_dur = new_end - new_start
 
-    runner.registerInfo("Coffee #{new_dur}")
+    runner.registerInfo("The new schedule duration is #{new_dur}")
 
     # check the schedule for reasonableness
     apply_to_all_schedules = false
@@ -144,7 +144,9 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
       raw_schedules = model.getScheduleRulesets
       raw_schedules.each do |raw_schedule|
         if raw_schedule.directUseCount > 0
-          schedules << raw_schedule
+          if raw_schedule.name.get["OCC_SCH"] or raw_schedule.name.get["LIGHT_SCH"] or raw_schedule.name.get["EQUIP_SCH"] or raw_schedule.name.get["ACTIVITY_SCH"]
+            schedules << raw_schedule
+            end
         end
       end
 
@@ -191,9 +193,6 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
         old_times = day_sch.times
         old_values = day_sch.values
 
-        runner.registerInfo("Bag #{old_times}")
-        runner.registerInfo("Shoe #{old_values}")
-
         old_start = []
         for i in 0..(old_values.length - 1)
           if i == (old_values.length - 1)
@@ -226,63 +225,40 @@ class SetScheduleProfileStartEndTimes < OpenStudio::Measure::ModelMeasure
         end
         old_end = old_end::hours
 
-        runner.registerInfo("Icecream #{old_end}")
 
         old_sch = old_values[old_start..old_end]
         old_dur = old_sch.length
-
-        runner.registerInfo("Burger #{old_sch}")
-        runner.registerInfo("Pizza #{old_dur}")
 
         chunked = chunk_schedule(old_sch)
 
         # you can update to the method below once OS supports ruby 2.5.1
         #chunked = old_sch.chunk_while {|i,j| i == j}.to_a
-        #runner.registerInfo("Cherry #{chunked.length}")
-        runner.registerInfo("Strawberry #{chunked}")
 
         # clear old_values
         day_sch.clearValues
 
+        # reorganize schedule based on specified start and end points
         if chunked.class == Float
           for i in new_start..new_end
-            runner.registerInfo("tired #{i}")
-            runner.registerInfo("snow #{chunked}")
-            runner.registerInfo("sneakers #{chunked}")
-            day_sch.addValue(OpenStudio::Time.new(0,i, 0, 0), chunked)
+            day_sch.addValue(OpenStudio::Time.new(0,i, 0, 0), chunked) # add new values
           end
         else
           chunk_values = []
           percentage = []
-
           for chunk in chunked
             percentage << chunk.length/old_dur.to_f
-            runner.registerInfo("Hawaii #{chunk.length}")
             chunk_values << chunk[0]
           end
-
-          runner.registerInfo("Snowboard #{percentage}")
-          runner.registerInfo("Ski #{chunked}")
-          runner.registerInfo("Skate #{chunk_values}")
-
           nhrs = []
           for p in percentage
-            nhrs << (p*new_dur).round
+            nhrs << (p*new_dur).round # calculate number of hours for each value
           end
-
-          runner.registerInfo("Surf #{nhrs}")
-
           new_values = []
           for i in 0..(chunk_values.length-1)
-            new_values = new_values + Array.new(nhrs[i], chunk_values[i])
+            new_values = new_values + Array.new(nhrs[i], chunk_values[i]) # create new value array
           end
-
-          runner.registerInfo("Gloss #{new_values}")
-
-          # make new values
           for i in new_start..(new_start+new_values.length-1)
-            runner.registerInfo("TV #{i} #{new_values[i-new_start]}")
-            day_sch.addValue(OpenStudio::Time.new(0, i, 0, 0), new_values[i-new_start])
+            day_sch.addValue(OpenStudio::Time.new(0, i, 0, 0), new_values[i-new_start]) # add new values
           end
         end
 

@@ -15,11 +15,11 @@ class SetHeatPumpCoolingCoilRatedCop < OpenStudio::Measure::ModelMeasure
   def arguments(model)
     args = OpenStudio::Ruleset::OSArgumentVector.new
 
-    cop = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("cop", true)
-    cop.setDisplayName("Cooling Coil Rated COP")
-    cop.setDefaultValue(3.65)
-    cop.setDescription("Set the heat pump's cooling coil rated COP to this value.")
-    args << cop
+    cool_cop = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("cool_cop", true)
+    cool_cop.setDisplayName("Cooling Coil Rated COP")
+    cool_cop.setDefaultValue(3.65)
+    cool_cop.setDescription("Set the heat pump's cooling coil rated COP to this value.")
+    args << cool_cop
 
     return args
   end
@@ -34,21 +34,21 @@ class SetHeatPumpCoolingCoilRatedCop < OpenStudio::Measure::ModelMeasure
     end
 
     # get COP argument as double
-    cop = runner.getDoubleArgumentValue('cop', user_arguments)
+    cool_cop = runner.getDoubleArgumentValue('cool_cop', user_arguments)
 
     # check the COP input for reasonableness
-    if cop <= 0
+    if cool_cop <= 0
       runner.registerError('Please enter a positive value for Rated COP.')
       return false
     end
-    if cop > 10
-      runner.registerWarning("The requested Rated COP of #{cop} seems unusually high")
+    if cool_cop > 10
+      runner.registerWarning("The requested Rated COP of #{cool_cop} seems unusually high")
     end
 
     # set cooling coil rated COP for all heat pumps
     model.getObjectsByType('OS:Coil:Cooling:WaterToAirHeatPump:EquationFit'.to_IddObjectType).each do |coolingobj|
       coolingobj = coolingobj.to_CoilCoolingWaterToAirHeatPumpEquationFit.get
-      coolingobj.setRatedCoolingCoefficientofPerformance(cop)
+      coolingobj.setRatedCoolingCoefficientofPerformance(cool_cop)
     end
 
     return true
