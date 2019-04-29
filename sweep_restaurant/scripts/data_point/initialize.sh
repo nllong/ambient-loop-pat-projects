@@ -5,7 +5,7 @@
 
 if [[ (-z $1) || (-z $2) || (-z $3) || (-z $4) ]] ; then
     echo "Expecting script to have 4 parameters:"
-    echo "  1: Path to where OpenStudio is installed on the system. Docker: /usr/local/openstudio-2.7.1. OSX: /Applications/openstudio-2.7.0/Ruby" 
+    echo "  1: Path to where OpenStudio is installed on the system. Docker: /usr/local/openstudio-2.7.1/Ruby. OSX: /Applications/openstudio-2.7.0/Ruby"
     echo "  2: Name of the exiting gem to replace, e.g. openstudio-standards"
     echo "  3: Argument of the new gem GitHub repo, e.g. NREL/openstudio-standards"
     echo "  4: Name of the GitHub branch to install, e.g. master"
@@ -15,7 +15,18 @@ fi
 
 echo $0
 
-GEMFILE_DIR=$1
+# resolve issue where the openstudio version cannot be found
+if [ ! -d "$1" ]; then
+    echo "could not find the path to openstudio. Trying to find it based on the version of openstudio from path"
+    # get the version of openstudio and figure out the version that is in the $1 arg. Then replace the
+    # version in $1 with the version of OpenStudio that is in path.
+    os_version=$(openstudio openstudio_version | grep -o '[0-9].*\.[0-9].*\.[0-9]')
+    os_version_in_1=$(echo $1 | grep -o '[0-9].*\.[0-9].*\.[0-9]')
+    new_search_path=${1/$os_version_in_1/$os_version}
+    GEMFILE_DIR=$new_search_path
+else
+    GEMFILE_DIR=$1
+fi
 GEMFILE_PATH=${GEMFILE_DIR}/Gemfile
 NEW_GEMFILE_DIR=/var/oscli
 EXISTING_GEM=$2
