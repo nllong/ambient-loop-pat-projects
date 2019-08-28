@@ -8,10 +8,10 @@ echo "Calling $0 with arguments: $@"
 
 if [[ (-z $1) || (-z $2) || (-z $3) ]]; then
     echo "Expecting script to have 3 parameters:"
-    echo "  1: Name of the exiting gem to replace, e.g. openstudio-standards"
+    echo "  1: Name of the existing gem to replace, e.g. openstudio-standards"
     echo "  2: Argument of the new gem GitHub repo, e.g. NREL/openstudio-standards"
     echo "  3: Name of the GitHub branch to install, e.g. master"
-    echo "  -- example use: ./set_standards_version.sh /usr/local/openstudio-2.7.1/Ruby openstudio-standards NREL/openstudio-standards master"
+    echo "  -- example use: ./set_standards_version.sh openstudio-standards NREL/openstudio-standards master"
     exit 1
 fi
 
