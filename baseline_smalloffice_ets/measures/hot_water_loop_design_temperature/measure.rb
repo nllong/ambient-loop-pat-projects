@@ -18,7 +18,7 @@ class HotWaterLoopDesignTemperature < OpenStudio::Measure::ModelMeasure
     # the name of the space to add to the model
     temp = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("hot_water_temperature", true)
     temp.setDisplayName("Hot Water Temperature")
-    temp.setDescription("Design temperature of the hot water loop. Name must be Hot Water Loop")
+    temp.setDescription("Design temperature of the hot water loop. Name must be Hot Water Loop or Ambient Loop")
     args << temp
 
     return args
@@ -37,8 +37,9 @@ class HotWaterLoopDesignTemperature < OpenStudio::Measure::ModelMeasure
     temp = runner.getDoubleArgumentValue("hot_water_temperature", user_arguments)
 
     # get the hot water loop
-    # This measure only works with the predifined loop name of `Ambient Loop`
+    # This measure only works with the predifined loop name of `Ambient Loop` or 'Hot Water Loop'
     plant_loop = model.getPlantLoopByName('Ambient Loop').get
+	
 
     # try and set the temperature of the ambient loop - this includes setting the
     # plant loop min/max temperatures, the sizing plant objects, and the schedules
