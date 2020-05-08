@@ -67,8 +67,12 @@ class InternalLoadsMultiplier < OpenStudio::Measure::ModelMeasure
 
     # loop through space types altering loads
     model.getSpaceTypes.each do |space_type|
+	  runner.registerInfo("#{space_type}")
+	  runner.registerInfo("#{space_type.name}")
+	  next if space_type.name.get == 'Plenum Space Type' ##AA added 10/25 
       next if space_type.spaces.size == 0
       next if space_type.standardsSpaceType.get == 'Attic'
+	  
 
       # update lights
       space_type.lights.each do |light|

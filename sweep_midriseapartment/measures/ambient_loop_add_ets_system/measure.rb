@@ -57,6 +57,21 @@ class AmbientLoopAddEtsSystem < OpenStudio::Measure::ModelMeasure
 
     # add in the ambient loop model -- this is definitely not right. This adds a water to air heat pump
     model.add_energy_transfer_station("Water-to-Air Heat Pump", get_thermal_zones(model))
+	
+#AA added below b/c fan schedule wasnt being set in MF bldgs. 
+    hvac_operation_schedule = nil
+
+    model.getSchedules.each do |schedule|
+        if schedule.name.get.to_s =~ /HVACOperationSchd/ || schedule.name.get.to_s =~ /ApartmentMidRise COMPACT HVAC-ALWAYS 1/ ##AA added this, 11/2, for fan schedule in MF bldg 
+          runner.registerInfo("updated HVAC sched") 
+		  hvac_operation_schedule = schedule
+        end
+    end
+	
+	model.getObjectsByType('OS:ZoneHVAC:WaterToAirHeatPump'.to_IddObjectType).each do |hp|
+      hp = hp.to_ZoneHVACWaterToAirHeatPump.get
+      hp.setSupplyAirFanOperatingModeSchedule(hvac_operation_schedule) if hvac_operation_schedule
+	end   
 
     File.open("#{run_dir}/final.osm", 'w') {|f| f << model.to_s}
 

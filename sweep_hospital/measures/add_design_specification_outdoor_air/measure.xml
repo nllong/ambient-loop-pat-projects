@@ -1,0 +1,101 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>add_design_specification_outdoor_air</name>
+  <uid>0a6c7a8c-fa3b-4025-b909-a32096c01144</uid>
+  <version_id>40059ce2-d6b5-400a-b2e9-5e87923b7217</version_id>
+  <version_modified>20180726T191221Z</version_modified>
+  <xml_checksum>266557E5</xml_checksum>
+  <class_name>AddDesignSpecificationOutdoorAir</class_name>
+  <display_name>Add Design Specification Outdoor Air</display_name>
+  <description>This measure sets a design specification outdoor air for the user-specified space type, and if the option to do so is selected by the user, also sets the AHU serving that space type to 100% outdoor air. </description>
+  <modeler_description>This measure sets a design specification outdoor air for the user-specified space type, and, if the option to do so is selected by the user, also sets the AHU serving that space type to 100% outdoor air. It also sets economizer settings that will be used to determine when a heat recovery system is bypassed.</modeler_description>
+  <arguments>
+    <argument>
+      <name>space_type</name>
+      <display_name>Apply the Measure to this Space Type.</display_name>
+      <type>String</type>
+      <required>false</required>
+      <model_dependent>false</model_dependent>
+      <default_value>Hospital Lab - 90.1-2010 - 90.1-2010 - 90.1-2010</default_value>
+    </argument>
+    <argument>
+      <name>flow_rate</name>
+      <display_name>Desired OA Flow Rate Specification, in ACH</display_name>
+      <type>Double</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>6</default_value>
+    </argument>
+    <argument>
+      <name>set_OA</name>
+      <display_name>Set AHU Serving Specified Space Type to 100% OA</display_name>
+      <description>This will set any AHU serving a space of the specified type to 100% outdoor air.</description>
+      <type>Boolean</type>
+      <required>true</required>
+      <model_dependent>false</model_dependent>
+      <default_value>true</default_value>
+      <choices>
+        <choice>
+          <value>true</value>
+          <display_name>true</display_name>
+        </choice>
+        <choice>
+          <value>false</value>
+          <display_name>false</display_name>
+        </choice>
+      </choices>
+    </argument>
+  </arguments>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.Ventilation</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Apply Measure Now</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>OpenStudio Application</value>
+      <datatype>string</datatype>
+    </attribute>
+    <attribute>
+      <name>Intended Software Tool</name>
+      <value>Parametric Analysis Tool</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>add_design_specification_outdoor_air_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>31FEDDBA</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.5.1</identifier>
+        <min_compatible>2.5.1</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>0B89E37F</checksum>
+    </file>
+  </files>
+</measure>

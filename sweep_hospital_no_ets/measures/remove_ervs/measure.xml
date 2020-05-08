@@ -1,0 +1,76 @@
+<measure>
+  <schema_version>3.0</schema_version>
+  <name>remove_er_vs</name>
+  <uid>c6afb4c9-b4f1-4ac7-a9cc-bf050ecbab91</uid>
+  <version_id>0af60eea-c7f4-4f98-a643-00d8d6c2c358</version_id>
+  <version_modified>20191110T194558Z</version_modified>
+  <xml_checksum>DC6E0CD2</xml_checksum>
+  <class_name>RemoveERVs</class_name>
+  <display_name>RemoveERVs</display_name>
+  <description>This measure iteratures through all airloops in the model, and removes any HeatExchanger:AirtoAir:SensibleandLatent object that is connected
+	to the air loop. It is assumed that these objects represent energy recovery ventilators.</description>
+  <modeler_description>This measure iteratures through all airloops in the model, and removes any HeatExchanger:AirtoAir:SensibleandLatent object that is connected
+	to the air loop. It is assumed that these objects represent energy recovery ventilators.</modeler_description>
+  <arguments/>
+  <outputs/>
+  <provenances/>
+  <tags>
+    <tag>HVAC.Energy Recovery</tag>
+  </tags>
+  <attributes>
+    <attribute>
+      <name>Measure Type</name>
+      <value>ModelMeasure</value>
+      <datatype>string</datatype>
+    </attribute>
+  </attributes>
+  <files>
+    <file>
+      <filename>LICENSE.md</filename>
+      <filetype>md</filetype>
+      <usage_type>license</usage_type>
+      <checksum>CD7F5672</checksum>
+    </file>
+    <file>
+      <filename>README.md.erb</filename>
+      <filetype>erb</filetype>
+      <usage_type>readmeerb</usage_type>
+      <checksum>703C9964</checksum>
+    </file>
+    <file>
+      <filename>.gitkeep</filename>
+      <filetype>gitkeep</filetype>
+      <usage_type>doc</usage_type>
+      <checksum>00000000</checksum>
+    </file>
+    <file>
+      <filename>remove_er_vs_test.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>test</usage_type>
+      <checksum>FCE439E4</checksum>
+    </file>
+    <file>
+      <filename>example_model.osm</filename>
+      <filetype>osm</filetype>
+      <usage_type>test</usage_type>
+      <checksum>53D14E69</checksum>
+    </file>
+    <file>
+      <version>
+        <software_program>OpenStudio</software_program>
+        <identifier>2.8.1</identifier>
+        <min_compatible>2.8.1</min_compatible>
+      </version>
+      <filename>measure.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>script</usage_type>
+      <checksum>017799CA</checksum>
+    </file>
+    <file>
+      <filename>README.md</filename>
+      <filetype>md</filetype>
+      <usage_type>readme</usage_type>
+      <checksum>D25D013B</checksum>
+    </file>
+  </files>
+</measure>
