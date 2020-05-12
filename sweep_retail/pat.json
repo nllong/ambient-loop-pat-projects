@@ -2055,7 +2055,6 @@
     "worker_initialization": {
       "file": "initialize.sh",
       "arguments": [
-        "/usr/local/openstudio-2.7.1/Ruby",
         "openstudio-standards",
         "NREL/openstudio-standards",
         "ambient-loop"
