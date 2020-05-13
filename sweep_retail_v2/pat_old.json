@@ -1,0 +1,4589 @@
+{
+  "projectName": "sweep_retail_v2",
+  "projectDir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2",
+  "analysisName": "sweep retail ets v2",
+  "seed": "example_model.osm",
+  "weatherFile": "USA_CO_Golden-NREL.724666_TMY3.epw",
+  "analysis_type": "Algorithmic",
+  "remoteSettings": {
+    "open": true,
+    "remoteType": "Existing Remote Server",
+    "remoteServerURL": "http://bball-130590.nrel.gov:8080/",
+    "aws": {},
+    "credentials": {
+      "yamlFilename": null,
+      "accessKey": null,
+      "region": "us-east-1"
+    }
+  },
+  "samplingMethod": {
+    "id": "single_run",
+    "name": "analysis.type.singleRun",
+    "link": null
+  },
+  "algorithmSettings": [
+    {
+      "name": "seed",
+      "displayName": "Seed",
+      "description": "Integer seed for random number generator",
+      "defaultValue": null,
+      "type": "number",
+      "value": null,
+      "$$hashKey": "object:107"
+    },
+    {
+      "name": "failed_f_value",
+      "displayName": "Failed F Value",
+      "description": "Return Value for F(x) if F fails",
+      "defaultValue": 1000000000000000000,
+      "type": "number",
+      "value": 1000000000000000000,
+      "$$hashKey": "object:4524"
+    },
+    {
+      "name": "debug_messages",
+      "displayName": "Debug Messages",
+      "description": "Options: 1 or 0 (True or False)",
+      "defaultValue": 0,
+      "type": "number",
+      "value": 0,
+      "$$hashKey": "object:4525"
+    }
+  ],
+  "rubyMD5": "",
+  "mongoMD5": "",
+  "openstudioServerMD5": "",
+  "openstudioCLIMD5": "",
+  "openstudioMD5": "",
+  "measures": [
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_prototype_building_by_location",
+      "name": "ambient_loop_prototype_building_by_location",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_prototype_building_by_location",
+      "uid": "eed65df5-3517-44d5-8ecd-35631aadcc24",
+      "uuid": "{eed65df5-3517-44d5-8ecd-35631aadcc24}",
+      "version_id": "1043e209-96e1-47f7-ad3a-2629a20f78f8",
+      "version_uuid": "{1043e209-96e1-47f7-ad3a-2629a20f78f8}",
+      "version_modified": "20190826T205142Z",
+      "xml_checksum": "2C38F48B",
+      "display_name": "Ambient Loop Prototype Building By Location",
+      "class_name": "AmbientLoopPrototypeBuildingByLocation",
+      "description": "Change the building location",
+      "modeler_description": "Change the building location",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-003O",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-003Q",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Name"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-003S",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Description: Change the building location"
+        },
+        {
+          "name": "building_type",
+          "display_name": "Building Type",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "SmallOffice",
+          "choice_values": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient"
+          ],
+          "choice_display_names": [
+            "SecondarySchool",
+            "PrimarySchool",
+            "SmallOffice",
+            "MediumOffice",
+            "LargeOffice",
+            "SmallHotel",
+            "LargeHotel",
+            "Warehouse",
+            "RetailStandalone",
+            "RetailStripmall",
+            "QuickServiceRestaurant",
+            "FullServiceRestaurant",
+            "MidriseApartment",
+            "HighriseApartment",
+            "Hospital",
+            "Outpatient"
+          ],
+          "display_name_short": "building_type",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "SecondarySchool",
+              "PrimarySchool",
+              "SmallOffice",
+              "MediumOffice",
+              "LargeOffice",
+              "SmallHotel",
+              "LargeHotel",
+              "Warehouse",
+              "RetailStandalone",
+              "RetailStripmall",
+              "QuickServiceRestaurant",
+              "FullServiceRestaurant",
+              "MidriseApartment",
+              "HighriseApartment",
+              "Hospital",
+              "Outpatient"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "SmallOffice",
+            "minimum": "SmallOffice",
+            "mean": "SmallOffice",
+            "deltaX": "SmallOffice",
+            "stdDev": "SmallOffice",
+            "default_value": "RetailStandalone",
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:19880",
+          "variable": true,
+          "option_1": "RetailStandalone"
+        },
+        {
+          "name": "template",
+          "display_name": "Template",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2010",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NECB 2011"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013",
+            "NECB 2011"
+          ],
+          "display_name_short": "template",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "DOE Ref Pre-1980",
+              "DOE Ref 1980-2004",
+              "90.1-2004",
+              "90.1-2007",
+              "90.1-2010",
+              "90.1-2013",
+              "NECB 2011"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "90.1-2010",
+            "minimum": "90.1-2010",
+            "mean": "90.1-2010",
+            "deltaX": "90.1-2010",
+            "stdDev": "90.1-2010",
+            "default_value": "90.1-2010",
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:19881",
+          "variable": true,
+          "option_1": "90.1-2010"
+        },
+        {
+          "name": "weather_file_name",
+          "display_name": "Weather File Name",
+          "description": "Name of the weather file. This is the filename with the extension (e.g. NewWeather.epw). Optionally this can include the full file path, but for most use cases should just be file name.",
+          "type": "String",
+          "required": true,
+          "model_dependent": false,
+          "display_name_short": "weather_file_name",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "USA_CO_Golden-NREL.724666_TMY3.epw",
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:19882",
+          "variable": true,
+          "option_1": "USA_CO_Golden-NREL.724666_TMY3.epw"
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "8/26/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 0,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "building_type",
+              "value": "RetailStandalone"
+            },
+            {
+              "name": "template",
+              "value": "90.1-2010"
+            },
+            {
+              "name": "weather_file_name",
+              "value": "USA_CO_Golden-NREL.724666_TMY3.epw"
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Change the building location"
+        }
+      ],
+      "instanceId": 0.8501193580456758,
+      "skip": false,
+      "$$hashKey": "object:19837",
+      "outputMeasure": false,
+      "showWarningText": false,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_add_ets_system",
+      "name": "ambient_loop_add_ets_system",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_add_ets_system",
+      "uid": "ef83af59-3005-4d3e-9477-6de226168580",
+      "uuid": "{ef83af59-3005-4d3e-9477-6de226168580}",
+      "version_id": "733aedca-4edf-471b-82a0-fa8de0a5265b",
+      "version_uuid": "{733aedca-4edf-471b-82a0-fa8de0a5265b}",
+      "version_modified": "20181206T144045Z",
+      "xml_checksum": "2C38F48B",
+      "display_name": "Ambient Loop Add ETS System",
+      "class_name": "AmbientLoopAddEtsSystem",
+      "description": "Apply an ETS system to a model",
+      "modeler_description": "This measure removes the existing HVAC system and replaces it with an energy transfer station.",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-003X",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-003Z",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0041",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "12/6/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 1,
+      "options": [],
+      "instanceId": 0.4294212187712574,
+      "skip": false,
+      "$$hashKey": "object:7455",
+      "showWarningText": false,
+      "outputMeasure": false,
+      "numberOfOptions": 0
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_temperature_setpoint",
+      "name": "ambient_loop_temperature_setpoint",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_temperature_setpoint",
+      "uid": "b7cf0cbd-f752-4e43-9c9c-62705a3b7613",
+      "uuid": "{b7cf0cbd-f752-4e43-9c9c-62705a3b7613}",
+      "version_id": "db323978-64d0-419f-8e71-4df40b83b226",
+      "version_uuid": "{db323978-64d0-419f-8e71-4df40b83b226}",
+      "version_modified": "20190304T072810Z",
+      "xml_checksum": "1F3D2430",
+      "display_name": "Ambient Loop Temperature Setpoint",
+      "class_name": "AmbientLoopTemperatureSetpoint",
+      "description": "Set the temperature of the ambient loop to a specific value.",
+      "modeler_description": "There are naming restrictions in this measure. Plant loop must be named 'Ambient Loop'",
+      "tags": "HVAC.Heating",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-0043",
+          "variable": true,
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-0045",
+          "variable": true,
+          "option_1": "Option 1 Name",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0047",
+          "variable": true,
+          "option_1": "Option 1 Description: Set the temperature of the ambient loop to a specific value.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
+        },
+        {
+          "name": "setpoint_temperature",
+          "display_name": "Ambient Loop Temperature",
+          "description": "Temperature setpoint for the ambient loop",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "Degrees Celsius",
+          "display_name_short": "setpoint_temperature",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 25,
+            "minimum": 15,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 25,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:7544",
+          "default_value": 20,
+          "variable": true,
+          "option_1": 25
+        },
+        {
+          "name": "design_delta",
+          "display_name": "Delta Design Loop Temperature",
+          "description": "Delta design temperature for the ambient loop",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "Delta Temperature",
+          "default_value": 5.55,
+          "display_name_short": "design_delta",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 7,
+            "minimum": 1,
+            "mean": 5.55,
+            "deltaX": 5.55,
+            "stdDev": 5.55,
+            "default_value": 10,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:7545",
+          "variable": true,
+          "option_1": 10
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/4/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 2,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "setpoint_temperature",
+              "value": 25
+            },
+            {
+              "name": "design_delta",
+              "value": 10
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Set the temperature of the ambient loop to a specific value."
+        }
+      ],
+      "instanceId": 0.5847995276934717,
+      "skip": false,
+      "$$hashKey": "object:7456",
+      "showWarningText": true,
+      "outputMeasure": false,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\hot_water_loop_design_temperature",
+      "name": "hot_water_loop_design_temperature",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\hot_water_loop_design_temperature",
+      "uid": "c4674445-7dad-4ba9-8b06-11028fd76904",
+      "uuid": "{c4674445-7dad-4ba9-8b06-11028fd76904}",
+      "version_id": "b1c318f6-c194-4914-9031-1642fecc8000",
+      "version_uuid": "{b1c318f6-c194-4914-9031-1642fecc8000}",
+      "version_modified": "20180927T020350Z",
+      "xml_checksum": "1F3D2430",
+      "display_name": "Hot Water Loop Design Temperature",
+      "class_name": "HotWaterLoopDesignTemperature",
+      "description": "Set the design temperature of the Hot Water Loop to the specified value.",
+      "modeler_description": "The name of the loop must be 'Hot Water Loop'",
+      "tags": "HVAC.Heating",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-004B",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-004D",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-004F",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "name": "hot_water_temperature",
+          "display_name": "Hot Water Temperature",
+          "description": "Design temperature of the hot water loop. Name must be Hot Water Loop",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "display_name_short": "hot_water_temperature",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 60,
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:20596",
+          "variable": true
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "9/26/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 3,
+      "options": [],
+      "instanceId": 0.692291204695576,
+      "skip": false,
+      "$$hashKey": "object:20553",
+      "showWarningText": false,
+      "outputMeasure": false,
+      "numberOfOptions": 0
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\remove_all_doors",
+      "name": "remove_all_doors",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\remove_all_doors",
+      "uid": "2248ab73-e210-4c44-85cc-d18c39fe50f5",
+      "uuid": "{2248ab73-e210-4c44-85cc-d18c39fe50f5}",
+      "version_id": "5976a0d7-95ea-47fc-bc1b-c10133d520e3",
+      "version_uuid": "{5976a0d7-95ea-47fc-bc1b-c10133d520e3}",
+      "version_modified": "20190102T133043Z",
+      "xml_checksum": "8296E2DB",
+      "display_name": "Remove All Doors",
+      "class_name": "RemoveAllDoors",
+      "description": "Removes all doors from building envelope.",
+      "modeler_description": "Removes all doors from building envelope.",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-004I",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-004K",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-004M",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "1/2/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 4,
+      "options": [],
+      "instanceId": 0.9515230263612366,
+      "skip": false,
+      "$$hashKey": "object:71597",
+      "showWarningText": false,
+      "outputMeasure": false,
+      "numberOfOptions": 0
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_window_to_wall_ratio",
+      "name": "set_window_to_wall_ratio",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_window_to_wall_ratio",
+      "uid": "73ac3246-3170-4853-bed9-0ca14ea7981c",
+      "uuid": "{73ac3246-3170-4853-bed9-0ca14ea7981c}",
+      "version_id": "68a81245-27ce-408c-9b30-59f84f44555d",
+      "version_uuid": "{68a81245-27ce-408c-9b30-59f84f44555d}",
+      "version_modified": "20190304T073737Z",
+      "xml_checksum": "7308DE72",
+      "display_name": "Set Window to Wall Ratio",
+      "class_name": "SetWindowToWallRatio",
+      "description": "Set the window to wall ratio for all facades to a specific value.",
+      "modeler_description": "This measure identifies exterior surfaces. Then it runs a method that removes existing windows and applies a new window with a specified window to wall ratio and sill height. The construction chosen for the new window is defaulted to what is assigned to the space, or inherited from a higher level object, such as the building. If the baseline model uses hard assigned constructions you may not get the expected results. The measure doesn't have any cost or lifecycle arguments, however if lifecycle objects exist for exterior wall and window constructions, then this measure will be able to calculate the economic impact of change in window to wall ratio.",
+      "tags": "Envelope.Fenestration",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-004O",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-004Q",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Name"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-004S",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Description: Set the window to wall ratio for all facades to a specific value."
+        },
+        {
+          "name": "wwr",
+          "display_name": "Window to Wall Ratio (fraction)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0.2,
+          "display_name_short": "wwr",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.8,
+            "minimum": 0.2,
+            "mean": 0.2,
+            "deltaX": 0.2,
+            "stdDev": 0,
+            "default_value": 0.2,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:24372",
+          "variable": true,
+          "option_1": 0.2
+        },
+        {
+          "name": "sillHeight",
+          "display_name": "Sill Height (in)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "display_name_short": "sillHeight",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 30,
+            "minimum": 30,
+            "mean": 30,
+            "deltaX": 30,
+            "stdDev": 30,
+            "default_value": 30,
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:24373",
+          "variable": true,
+          "option_1": 30
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/4/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 5,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "wwr",
+              "value": 0.2
+            },
+            {
+              "name": "sillHeight",
+              "value": 30
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Set the window to wall ratio for all facades to a specific value."
+        }
+      ],
+      "instanceId": 0.578034588091475,
+      "skip": false,
+      "$$hashKey": "object:24299",
+      "outputMeasure": false,
+      "showWarningText": true,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_roof_insulation_r_value",
+      "name": "set_roof_insulation_r_value",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_roof_insulation_r_value",
+      "uid": "65b798f4-207f-4aed-987a-386c865d0ccd",
+      "uuid": "{65b798f4-207f-4aed-987a-386c865d0ccd}",
+      "version_id": "8fce54b6-4076-4a7a-9390-848187f0ff03",
+      "version_uuid": "{8fce54b6-4076-4a7a-9390-848187f0ff03}",
+      "version_modified": "20190325T231741Z",
+      "xml_checksum": "0F858D9E",
+      "display_name": "Set Roof Insulation R Value",
+      "class_name": "SetRoofInsulationRValue",
+      "description": "Set the R-Value of roof insulation to a specified value.  Higher R-Values provide better insulation, lowering heat loss and heat gain through the roof.",
+      "modeler_description": "Set the R-Value (ft^2*h*R/Btu) of the insulation material layer in all roofs in the model to a specified value.  Find constructions used for roofs, make copies of these and assign them to the appropriate construction sets or surfaces. Identify which layer of the construction is the insulation layer. This could be a Material, No Mass Material, or Air Gap Material. If the Insulation layer is \"Material? the thickness will be changed to attain the desired R-Value. If the insulation layer is \"No Mass Material? or \"Air Gap Material? the Thermal Resistance will be directly entered.  If the construction doesn't appear to have an insulation layer, it will not be altered. Surfaces with \"Adiabatic\" boundary conditions are not specifically assumed to be interior or exterior. As a result constructions used on \"Adiabatic\" surfaces will not be altered. Constructions used on attic floors will not be altered.\r\r\r\r\r\r\n  ",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-004W",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-004Y",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Name"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0050",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Description: Set the R-Value of roof insulation to a specified value.  Higher R-Values provide better insulation, lowering heat loss and heat gain through the roof."
+        },
+        {
+          "name": "roof_r",
+          "display_name": "Roof Insulation R-value (ft^2*h*R/Btu)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 30,
+          "variable": true,
+          "$$hashKey": "object:6660",
+          "display_name_short": "roof_r",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 80,
+            "minimum": 30,
+            "mean": 30,
+            "deltaX": 30,
+            "stdDev": 30,
+            "default_value": 30,
+            "showWarningIcon": true
+          },
+          "option_1": 30
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/25/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 6,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "roof_r",
+              "value": 30
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Set the R-Value of roof insulation to a specified value.  Higher R-Values provide better insulation, lowering heat loss and heat gain through the roof."
+        }
+      ],
+      "instanceId": 0.9649242507287623,
+      "skip": false,
+      "$$hashKey": "object:157837",
+      "showWarningText": true,
+      "outputMeasure": false,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_exterior_wall_insulation_r_value",
+      "name": "set_exterior_wall_insulation_r_value",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_exterior_wall_insulation_r_value",
+      "uid": "3fdf9c39-d305-449b-a4b5-077166af5a67",
+      "uuid": "{3fdf9c39-d305-449b-a4b5-077166af5a67}",
+      "version_id": "ad2ad825-b9ef-463c-aa25-fde1b5492e05",
+      "version_uuid": "{ad2ad825-b9ef-463c-aa25-fde1b5492e05}",
+      "version_modified": "20190325T230255Z",
+      "xml_checksum": "0F858D9E",
+      "display_name": "Set Exterior Wall Insulation R Value",
+      "class_name": "SetExteriorWallInsulationRValue",
+      "description": "Set the R-Value of exterior wall insulation to a specified value.  Higher R-Values provide better insulation, lowering heat loss and heat gain through the exterior walls.",
+      "modeler_description": "Set the R-Value (ft^2*h*R/Btu) of the insulation material layer in air exposed exterior walls to a specified value. Find constructions used for exterior walls, make copies of these and assign them to the appropriate construction sets or surfaces. Identify which layer of the construction is the insulation layer. Layer to change could be Material, No Mass Material, or Air Gap Material. If the Insulation layer is \"Material? the thickness will be changed to attain the desired R-Value. If the insulation layer is \"No Mass Material? or \"Air Gap Material? the Thermal Resistance can be directly entered. If the construction doesn't appear to have an insulation layer it will not be altered. Surfaces with \"Adiabatic\" boundary conditions are not specifically assumed to be interior or exterior. As a result constructions used on \"Adiabatic\" surfaces will not be altered. Constructions for surfaces with a \"Ground\" boundary condition will also not be altered. Constructions with an insulation layer that already exceeds the requested R-Value will also not be altered.\r\r\r\r\r\r\n  ",
+      "tags": "Envelope.Opaque",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-0053",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-0055",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Name"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0057",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Description: Set the R-Value of exterior wall insulation to a specified value.  Higher R-Values provide better insulation, lowering heat loss and heat gain through the exterior walls."
+        },
+        {
+          "name": "wall_r",
+          "display_name": "Exterior Wall Insulation R-value (ft^2*h*R/Btu)",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 13,
+          "variable": true,
+          "$$hashKey": "object:6438",
+          "display_name_short": "wall_r",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 60,
+            "minimum": 13,
+            "mean": 13,
+            "deltaX": 13,
+            "stdDev": 13,
+            "default_value": 13,
+            "showWarningIcon": true
+          },
+          "option_1": 13
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/25/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 7,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "wall_r",
+              "value": 13
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Set the R-Value of exterior wall insulation to a specified value.  Higher R-Values provide better insulation, lowering heat loss and heat gain through the exterior walls."
+        }
+      ],
+      "instanceId": 0.7142347791410446,
+      "skip": false,
+      "$$hashKey": "object:157838",
+      "showWarningText": true,
+      "outputMeasure": false,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_heat_pump_heating_coil_rated_cop",
+      "name": "set_heat_pump_heating_coil_rated_cop",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_heat_pump_heating_coil_rated_cop",
+      "uid": "550419ad-c73a-4e5f-b7b0-ab3768584ce4",
+      "uuid": "{550419ad-c73a-4e5f-b7b0-ab3768584ce4}",
+      "version_id": "f1b401f4-eea5-43b2-aa6e-5e9f56b3d527",
+      "version_uuid": "{f1b401f4-eea5-43b2-aa6e-5e9f56b3d527}",
+      "version_modified": "20190308T074955Z",
+      "xml_checksum": "8CBDDA1B",
+      "display_name": "Set Heat Pump Heating Coil Rated COP",
+      "class_name": "SetHeatPumpHeatingCoilRatedCop",
+      "description": "Set heat pump heating coil gross rated COP.",
+      "modeler_description": "Set heat pump heating coil gross rated COP.",
+      "tags": "HVAC.Cooling",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-005A",
+          "variable": true,
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-005C",
+          "variable": true,
+          "option_1": "Option 1 Name",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-005E",
+          "variable": true,
+          "option_1": "Option 1 Description: Set heat pump heating coil gross rated COP.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
+        },
+        {
+          "name": "heat_cop",
+          "display_name": "Cooling Coil Rated COP",
+          "description": "Set the heat pump's heating coil rated COP to this value.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 3.74,
+          "variable": true,
+          "$$hashKey": "object:6586",
+          "display_name_short": "heat_cop",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 5,
+            "minimum": 3.75,
+            "mean": 3.74,
+            "deltaX": 3.74,
+            "stdDev": 3.74,
+            "default_value": 4.75,
+            "showWarningIcon": true
+          },
+          "option_1": 4.75
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/8/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 8,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "heat_cop",
+              "value": 4.75
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Set heat pump heating coil gross rated COP."
+        }
+      ],
+      "instanceId": 0.7821255953017521,
+      "skip": false,
+      "$$hashKey": "object:24300",
+      "outputMeasure": false,
+      "showWarningText": true,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_heat_pump_cooling_coil_rated_cop",
+      "name": "set_heat_pump_cooling_coil_rated_cop",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_heat_pump_cooling_coil_rated_cop",
+      "uid": "9d74eeb6-9557-4d83-a96a-c5b8bfa1b6d2",
+      "uuid": "{9d74eeb6-9557-4d83-a96a-c5b8bfa1b6d2}",
+      "version_id": "e6c8a742-1e31-439e-8aaa-29726fd1c3ad",
+      "version_uuid": "{e6c8a742-1e31-439e-8aaa-29726fd1c3ad}",
+      "version_modified": "20190308T074955Z",
+      "xml_checksum": "8CBDDA1B",
+      "display_name": "Set Heat Pump Cooling Coil Rated COP",
+      "class_name": "SetHeatPumpCoolingCoilRatedCop",
+      "description": "Set heat pump cooling coil gross rated COP.",
+      "modeler_description": "Set heat pump cooling coil gross rated COP.",
+      "tags": "HVAC.Cooling",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-005H",
+          "variable": true,
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          }
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-005J",
+          "variable": true,
+          "option_1": "Option 1 Name",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-005L",
+          "variable": true,
+          "option_1": "Option 1 Description: Set heat pump cooling coil gross rated COP.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          }
+        },
+        {
+          "name": "cool_cop",
+          "display_name": "Cooling Coil Rated COP",
+          "description": "Set the heat pump's cooling coil rated COP to this value.",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 3.65,
+          "variable": true,
+          "$$hashKey": "object:6512",
+          "display_name_short": "cool_cop",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 5,
+            "minimum": 3.65,
+            "mean": 3.65,
+            "deltaX": 3.65,
+            "stdDev": 3.65,
+            "default_value": 4.75,
+            "showWarningIcon": true
+          },
+          "option_1": 4.75
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/8/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 9,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "cool_cop",
+              "value": 4.75
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Set heat pump cooling coil gross rated COP."
+        }
+      ],
+      "instanceId": 0.9736125647181417,
+      "skip": false,
+      "$$hashKey": "object:24301",
+      "outputMeasure": false,
+      "showWarningText": true,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\internal_loads_multiplier",
+      "name": "internal_loads_multiplier",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\internal_loads_multiplier",
+      "uid": "8c10b18d-c66d-43dc-9ef5-b82dfed0edde",
+      "uuid": "{8c10b18d-c66d-43dc-9ef5-b82dfed0edde}",
+      "version_id": "8b9e078c-393a-44ad-a57b-c616827f0271",
+      "version_uuid": "{8b9e078c-393a-44ad-a57b-c616827f0271}",
+      "version_modified": "20180927T020345Z",
+      "xml_checksum": "2C38F48B",
+      "display_name": "Internal Loads Multiplier",
+      "class_name": "InternalLoadsMultiplier",
+      "description": "Multipliers for LPD, EPD, and people densities.",
+      "modeler_description": "Multipliers for LPD, EPD, and people densities.",
+      "tags": "Whole Building.Space Types",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-005O",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true,
+          "option_1": "option_1"
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-005Q",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Name"
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-005S",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true,
+          "option_1": "Option 1 Description: Multipliers for LPD, EPD, and people densities."
+        },
+        {
+          "name": "lpd_multiplier",
+          "display_name": "LPD Multiplier",
+          "description": "Multiply the LPD in the building by this multiplier. Retail LPD is typically 1.3, Small Office 1.0",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "W/ft^2",
+          "default_value": 1,
+          "display_name_short": "lpd_multiplier",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 3,
+            "minimum": 0.33,
+            "mean": 1,
+            "deltaX": 1,
+            "stdDev": 1,
+            "default_value": 1,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:38386",
+          "variable": true,
+          "option_1": 1
+        },
+        {
+          "name": "epd_multiplier",
+          "display_name": "Electric Equipment Power Density Multiplier",
+          "description": "Multiply the EPD in the building by this value",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "W/ft^2",
+          "default_value": 1,
+          "display_name_short": "epd_multiplier",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Continuous",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 3,
+            "minimum": 0.33,
+            "mean": 1,
+            "deltaX": 1,
+            "stdDev": 1,
+            "default_value": 1,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:38387",
+          "variable": true,
+          "option_1": 1
+        },
+        {
+          "name": "people_per_floor_area_multiplier",
+          "display_name": "People per floor area multipleir",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "People/ft^2",
+          "default_value": 1,
+          "display_name_short": "people_per_floor_area_multiplier",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 1,
+            "minimum": 1,
+            "mean": 1,
+            "deltaX": 1,
+            "stdDev": 1,
+            "default_value": 1,
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:38388",
+          "variable": true,
+          "option_1": 1
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "9/26/2018",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 10,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "lpd_multiplier",
+              "value": 1
+            },
+            {
+              "name": "epd_multiplier",
+              "value": 1
+            },
+            {
+              "name": "people_per_floor_area_multiplier",
+              "value": 1
+            }
+          ],
+          "name": "Option 1 Name",
+          "description": "Option 1 Description: Multipliers for LPD, EPD, and people densities."
+        }
+      ],
+      "instanceId": 0.2900883518527211,
+      "skip": false,
+      "$$hashKey": "object:38343",
+      "outputMeasure": false,
+      "showWarningText": true,
+      "numberOfOptions": 1
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\shift_schedule_profile_time",
+      "name": "shift_schedule_profile_time",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\shift_schedule_profile_time",
+      "uid": "1c642348-f074-4ad1-98ee-2208ddc89ac7",
+      "uuid": "{1c642348-f074-4ad1-98ee-2208ddc89ac7}",
+      "version_id": "26b0598a-8619-4a81-95d7-e4a753614b5e",
+      "version_uuid": "{26b0598a-8619-4a81-95d7-e4a753614b5e}",
+      "version_modified": "20190308T074955Z",
+      "xml_checksum": "B6CD1F98",
+      "display_name": "Shift Schedule Profile Time",
+      "class_name": "ShiftScheduleProfileTime",
+      "description": "Shift a single or all schedules in the building by the specified number of hours",
+      "modeler_description": "This measure provides an easy way to shirt the building operations by a set time, but does not alter the length of the day. It only works with RulesetSchedules. It will allter summer and winter design days in addition to other profiles that are part of the schedules.",
+      "tags": "Whole Building.Whole Building Schedules",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        },
+        {
+          "name": "Measure Function",
+          "display_name": "Measure Function",
+          "value": "Measure"
+        },
+        {
+          "name": "Requires EnergyPlus Results",
+          "display_name": "Requires EnergyPlus Results",
+          "value": false
+        },
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-005X",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-005Z",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0061",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "name": "schedule",
+          "display_name": "Choose a Schedule to Shift the Time For.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*All Ruleset Schedules*",
+          "choice_values": [
+            "{245b28a9-f592-4d36-984b-806cc0d0b888}",
+            "{2cd0d70a-fbff-43aa-8554-ce842e3f694b}",
+            "{9c342d02-6c23-45a1-8551-72233620b65b}",
+            "{9bda09e9-dbd8-46d0-90de-a095c1676271}",
+            "{5356bec8-b237-41cd-bdbb-effd9c7be66f}",
+            "{4265be7d-17ad-43c0-ba4c-e7e17d425c60}",
+            "{a6a0763f-9980-4713-9486-1dadf2da23d3}",
+            "{137bb14a-f589-4e85-986d-9fc71ea79e91}",
+            "{4e299976-a356-4586-b39f-cb5a964fd044}",
+            "{20f18fd3-8ffa-430b-ba52-e2d734cdd2e6}"
+          ],
+          "choice_display_names": [
+            "Medium Office Cooling Setpoint Schedule",
+            "Medium Office Electric Equipment Schedule",
+            "Medium Office Gas Equipment Schedule",
+            "Medium Office Heating Setpoint Schedule",
+            "Medium Office Hot Water Equipment Schedule",
+            "Medium Office Infiltration Schedule",
+            "Medium Office Lighting Schedule",
+            "Medium Office Number of People Schedule",
+            "Medium Office People Activity Level Schedule",
+            "*All Ruleset Schedules*"
+          ],
+          "display_name_short": "schedule",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Medium Office Cooling Setpoint Schedule",
+              "Medium Office Electric Equipment Schedule",
+              "Medium Office Gas Equipment Schedule",
+              "Medium Office Heating Setpoint Schedule",
+              "Medium Office Hot Water Equipment Schedule",
+              "Medium Office Infiltration Schedule",
+              "Medium Office Lighting Schedule",
+              "Medium Office Number of People Schedule",
+              "Medium Office People Activity Level Schedule",
+              "*All Ruleset Schedules*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*All Ruleset Schedules*",
+            "minimum": "*All Ruleset Schedules*",
+            "mean": "*All Ruleset Schedules*",
+            "deltaX": "*All Ruleset Schedules*",
+            "stdDev": "*All Ruleset Schedules*",
+            "default_value": "*All Ruleset Schedules*",
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:8431",
+          "variable": true
+        },
+        {
+          "name": "dist",
+          "display_name": "Distribution for Random Shift Value Generator.",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "Uniform",
+          "choice_values": [
+            "Uniform",
+            "Normal",
+            "Triangular"
+          ],
+          "choice_display_names": [
+            "Uniform",
+            "Normal",
+            "Triangular"
+          ],
+          "display_name_short": "dist",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Uniform",
+              "Normal",
+              "Triangular"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "Uniform",
+            "minimum": "Uniform",
+            "mean": "Uniform",
+            "deltaX": "Uniform",
+            "stdDev": "Uniform",
+            "default_value": "Uniform",
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:8432",
+          "variable": true
+        },
+        {
+          "name": "shift_ll",
+          "display_name": "Shift Schedule Profiles Forward Lower Limit (24hr, use decimal for sub hour).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 0,
+          "display_name_short": "shift_ll",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": -2,
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:8433",
+          "variable": true
+        },
+        {
+          "name": "shift_ul",
+          "display_name": "Shift Schedule Profiles Forward Upper Limit (24hr, use decimal for sub hour).",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 1,
+          "display_name_short": "shift_ul",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 1,
+            "minimum": 1,
+            "mean": 1,
+            "deltaX": 1,
+            "stdDev": 1,
+            "default_value": 2,
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:8434",
+          "variable": true
+        },
+        {
+          "name": "shift_ct",
+          "display_name": "Shift Schedule Profiles Peak for Triangular Distribution.",
+          "description": "",
+          "type": "Double",
+          "required": false,
+          "model_dependent": false,
+          "display_name_short": "shift_ct",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0,
+            "minimum": 0,
+            "mean": 0,
+            "deltaX": 0,
+            "stdDev": 0,
+            "default_value": 0,
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:8435",
+          "variable": true
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/8/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 11,
+      "options": [],
+      "instanceId": 0.7406403593935007,
+      "skip": false,
+      "$$hashKey": "object:8388",
+      "showWarningText": false,
+      "numberOfOptions": 0
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_schedule_profile_start_end_times",
+      "name": "set_schedule_profile_start_end_times",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\set_schedule_profile_start_end_times",
+      "uid": "d7477df5-e482-44be-9be5-fe9875013229",
+      "uuid": "{d7477df5-e482-44be-9be5-fe9875013229}",
+      "version_id": "ade842ca-0fe8-43b6-9c85-6479491ca0b9",
+      "version_uuid": "{ade842ca-0fe8-43b6-9c85-6479491ca0b9}",
+      "version_modified": "20190322T194434Z",
+      "xml_checksum": "03F02484",
+      "display_name": "Set Schedule Profile Start End Times",
+      "class_name": "SetScheduleProfileStartEndTimes",
+      "description": "Expand or contract schedule profile by specifying new start and end times. The schedule profile shape is preserved.",
+      "modeler_description": "Expand or contract schedule profile by specifying new start and end times. The schedule profile shape is preserved.",
+      "tags": "Whole Building.Whole Building Schedules",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ModelMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-0068",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-006A",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-006C",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": ""
+          },
+          "variable": true
+        },
+        {
+          "name": "schedule",
+          "display_name": "Schedule to Expand or Contract",
+          "description": "",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "*All Ruleset Schedules*",
+          "choice_values": [
+            "{245b28a9-f592-4d36-984b-806cc0d0b888}",
+            "{2cd0d70a-fbff-43aa-8554-ce842e3f694b}",
+            "{9c342d02-6c23-45a1-8551-72233620b65b}",
+            "{9bda09e9-dbd8-46d0-90de-a095c1676271}",
+            "{5356bec8-b237-41cd-bdbb-effd9c7be66f}",
+            "{4265be7d-17ad-43c0-ba4c-e7e17d425c60}",
+            "{a6a0763f-9980-4713-9486-1dadf2da23d3}",
+            "{137bb14a-f589-4e85-986d-9fc71ea79e91}",
+            "{4e299976-a356-4586-b39f-cb5a964fd044}",
+            "{20f18fd3-8ffa-430b-ba52-e2d734cdd2e6}"
+          ],
+          "choice_display_names": [
+            "Medium Office Cooling Setpoint Schedule",
+            "Medium Office Electric Equipment Schedule",
+            "Medium Office Gas Equipment Schedule",
+            "Medium Office Heating Setpoint Schedule",
+            "Medium Office Hot Water Equipment Schedule",
+            "Medium Office Infiltration Schedule",
+            "Medium Office Lighting Schedule",
+            "Medium Office Number of People Schedule",
+            "Medium Office People Activity Level Schedule",
+            "*All Ruleset Schedules*"
+          ],
+          "display_name_short": "schedule",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "Medium Office Cooling Setpoint Schedule",
+              "Medium Office Electric Equipment Schedule",
+              "Medium Office Gas Equipment Schedule",
+              "Medium Office Heating Setpoint Schedule",
+              "Medium Office Hot Water Equipment Schedule",
+              "Medium Office Infiltration Schedule",
+              "Medium Office Lighting Schedule",
+              "Medium Office Number of People Schedule",
+              "Medium Office People Activity Level Schedule",
+              "*All Ruleset Schedules*"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "*All Ruleset Schedules*",
+            "minimum": "*All Ruleset Schedules*",
+            "mean": "*All Ruleset Schedules*",
+            "deltaX": "*All Ruleset Schedules*",
+            "stdDev": "*All Ruleset Schedules*",
+            "default_value": "*All Ruleset Schedules*",
+            "showWarningIcon": false
+          },
+          "$$hashKey": "object:4812",
+          "variable": true
+        },
+        {
+          "name": "new_start",
+          "display_name": "Schedule Start (hr)",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 8,
+          "display_name_short": "new_start",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Discrete",
+            "distribution": "Uniform",
+            "discreteVariables": [
+              {
+                "value": 5,
+                "weight": 0.2,
+                "$$hashKey": "object:5326"
+              },
+              {
+                "value": 6,
+                "weight": 0.2,
+                "$$hashKey": "object:5337"
+              },
+              {
+                "value": 7,
+                "weight": 0.2,
+                "$$hashKey": "object:5347"
+              },
+              {
+                "value": 8,
+                "weight": 0.2,
+                "$$hashKey": "object:5357"
+              },
+              {
+                "value": 9,
+                "weight": 0.2,
+                "$$hashKey": "object:5367"
+              }
+            ],
+            "maximum": 8,
+            "minimum": 8,
+            "mean": 8,
+            "deltaX": 8,
+            "stdDev": 8,
+            "default_value": 8,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:4813",
+          "variable": true
+        },
+        {
+          "name": "new_end",
+          "display_name": "Schedule End (hr)",
+          "description": "",
+          "type": "Integer",
+          "required": true,
+          "model_dependent": false,
+          "default_value": 18,
+          "display_name_short": "new_end",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Discrete",
+            "distribution": "Uniform",
+            "discreteVariables": [
+              {
+                "value": 16,
+                "weight": 0.2,
+                "$$hashKey": "object:5381"
+              },
+              {
+                "value": 17,
+                "weight": 0.2,
+                "$$hashKey": "object:5392"
+              },
+              {
+                "value": 18,
+                "weight": 0.2,
+                "$$hashKey": "object:5402"
+              },
+              {
+                "value": 19,
+                "weight": 0.2,
+                "$$hashKey": "object:5412"
+              },
+              {
+                "value": 20,
+                "weight": 0.2,
+                "$$hashKey": "object:5422"
+              }
+            ],
+            "maximum": 18,
+            "minimum": 18,
+            "mean": 18,
+            "deltaX": 18,
+            "stdDev": 18,
+            "default_value": 18,
+            "showWarningIcon": true
+          },
+          "$$hashKey": "object:4814",
+          "variable": true
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": true,
+      "addedToProject": true,
+      "date": "3/22/2019",
+      "author": "",
+      "type": "ModelMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 12,
+      "options": [],
+      "instanceId": 0.049964355871226385,
+      "skip": false,
+      "$$hashKey": "object:4739",
+      "showWarningText": true,
+      "numberOfOptions": 0
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\openstudio_results",
+      "name": "openstudio_results",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\openstudio_results",
+      "uid": "a25386cd-60e4-46bc-8b11-c755f379d916",
+      "uuid": "{a25386cd-60e4-46bc-8b11-c755f379d916}",
+      "version_id": "05ad855b-6ae3-431e-991b-80e5133a56f2",
+      "version_uuid": "{05ad855b-6ae3-431e-991b-80e5133a56f2}",
+      "version_modified": "20170622T203955Z",
+      "xml_checksum": "557BF06F",
+      "display_name": "OpenStudio Results",
+      "class_name": "OpenStudioResults",
+      "description": "This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+      "modeler_description": "For the most part consumption data comes from the tabular EnergyPlus results, however there are a few requests added for time series results. Space type and loop details come from the OpenStudio model. The code for this is modular, making it easy to use as a template for your own custom reports. The structure of the report uses bootstrap, and the graphs use dimple js.",
+      "tags": "Reporting.QAQC",
+      "outputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4831",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "natural_gas_ip",
+          "display_name": "natural_gas_ip",
+          "short_name": "natural_gas_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4832",
+          "checked": false
+        },
+        {
+          "name": "additional_fuel_ip",
+          "display_name": "additional_fuel_ip",
+          "short_name": "additional_fuel_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4833",
+          "checked": false
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4834",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4835",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4836",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4837",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "net_site_energy",
+          "display_name": "net_site_energy",
+          "short_name": "net_site_energy",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4838",
+          "checked": false,
+          "visualize": "true",
+          "objective_function": "true",
+          "target_value": "150",
+          "units": "MJ/m2"
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4839",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4840",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4841",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "first_year_capital_cost",
+          "display_name": "first_year_capital_cost",
+          "short_name": "first_year_capital_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4842",
+          "checked": false
+        },
+        {
+          "name": "annual_utility_cost",
+          "display_name": "annual_utility_cost",
+          "short_name": "annual_utility_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4843",
+          "checked": false
+        },
+        {
+          "name": "total_lifecycle_cost",
+          "display_name": "total_lifecycle_cost",
+          "short_name": "total_lifecycle_cost",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4844",
+          "checked": false
+        }
+      ],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Analysis Spreadsheet"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-009U",
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-009W",
+          "option_1": "Results",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-009Y",
+          "option_1": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "building_summary_section",
+          "display_name": "Model Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00A0",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "building_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "annual_overview_section",
+          "display_name": "Annual Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00A2",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "annual_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "monthly_overview_section",
+          "display_name": "Monthly Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00A4",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "monthly_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "utility_bills_rates_section",
+          "display_name": "Utility Bills/Rates",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00A6",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "utility_bills_rates_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "envelope_section_section",
+          "display_name": "Envelope",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00A8",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "envelope_section_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "space_type_breakdown_section",
+          "display_name": "Space Type Breakdown",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AA",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "space_type_breakdown_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "space_type_details_section",
+          "display_name": "Space Type Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AC",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "space_type_details_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "interior_lighting_section",
+          "display_name": "Interior Lighting Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AE",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "interior_lighting_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "plug_loads_section",
+          "display_name": "Plug Loads Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AG",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "plug_loads_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "exterior_light_section",
+          "display_name": "Exterior Lighting",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AI",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "exterior_light_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "water_use_section",
+          "display_name": "Water Use Equipment",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AK",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "water_use_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "hvac_load_profile",
+          "display_name": "HVAC Load Profiles",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AM",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "hvac_load_profile",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "zone_condition_section",
+          "display_name": "Zone Conditions",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AO",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "zone_condition_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "zone_summary_section",
+          "display_name": "Zone Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AQ",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "zone_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "zone_equipment_detail_section",
+          "display_name": "Zone Equipment Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AS",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "zone_equipment_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "air_loops_detail_section",
+          "display_name": "Air Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AU",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "air_loops_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "plant_loops_detail_section",
+          "display_name": "Plant Loops Detail",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AW",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "plant_loops_detail_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "outdoor_air_section",
+          "display_name": "Outdoor Air",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00AY",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "outdoor_air_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "cost_summary_section",
+          "display_name": "Cash Flow",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00B0",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "cost_summary_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "source_energy_section",
+          "display_name": "Site and Source Summary",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00B2",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "source_energy_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "schedules_overview_section",
+          "display_name": "Schedule Overview",
+          "description": "",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00B4",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "schedules_overview_section",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "6/22/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 13,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "building_summary_section",
+              "value": true
+            },
+            {
+              "name": "annual_overview_section",
+              "value": true
+            },
+            {
+              "name": "monthly_overview_section",
+              "value": true
+            },
+            {
+              "name": "utility_bills_rates_section",
+              "value": true
+            },
+            {
+              "name": "envelope_section_section",
+              "value": true
+            },
+            {
+              "name": "space_type_breakdown_section",
+              "value": true
+            },
+            {
+              "name": "space_type_details_section",
+              "value": true
+            },
+            {
+              "name": "interior_lighting_section",
+              "value": true
+            },
+            {
+              "name": "plug_loads_section",
+              "value": true
+            },
+            {
+              "name": "exterior_light_section",
+              "value": true
+            },
+            {
+              "name": "water_use_section",
+              "value": true
+            },
+            {
+              "name": "hvac_load_profile",
+              "value": true
+            },
+            {
+              "name": "zone_condition_section",
+              "value": true
+            },
+            {
+              "name": "zone_summary_section",
+              "value": true
+            },
+            {
+              "name": "zone_equipment_detail_section",
+              "value": true
+            },
+            {
+              "name": "air_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "plant_loops_detail_section",
+              "value": true
+            },
+            {
+              "name": "outdoor_air_section",
+              "value": true
+            },
+            {
+              "name": "cost_summary_section",
+              "value": true
+            },
+            {
+              "name": "source_energy_section",
+              "value": true
+            },
+            {
+              "name": "schedules_overview_section",
+              "value": true
+            }
+          ],
+          "name": "Results",
+          "description": "Option 1 Description: This measure creates high level tables and charts pulling both from model inputs and EnergyPlus results. It has building level information as well as detail on space types, thermal zones, HVAC systems, envelope characteristics, and economics. Click the heading above a chart to view a table of the chart data."
+        }
+      ],
+      "instanceId": 0.38023791636228554,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:1754",
+      "descOpen": true,
+      "outputMeasure": true,
+      "userDefinedOutputs": [],
+      "analysisOutputs": [
+        {
+          "name": "electricity_ip",
+          "display_name": "electricity_ip",
+          "short_name": "electricity_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4831",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "district_heating_ip",
+          "display_name": "district_heating_ip",
+          "short_name": "district_heating_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4834",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "district_cooling_ip",
+          "display_name": "district_cooling_ip",
+          "short_name": "district_cooling_ip",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4835",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "total_site_eui",
+          "display_name": "total_site_eui",
+          "short_name": "total_site_eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4836",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "eui",
+          "display_name": "eui",
+          "short_name": "eui",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4837",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "annual_peak_electric_demand",
+          "display_name": "annual_peak_electric_demand",
+          "short_name": "annual_peak_electric_demand",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4839",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "unmet_hours_during_occupied_cooling",
+          "display_name": "unmet_hours_during_occupied_cooling",
+          "short_name": "unmet_hours_during_occupied_cooling",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4840",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        },
+        {
+          "name": "unmet_hours_during_occupied_heating",
+          "display_name": "unmet_hours_during_occupied_heating",
+          "short_name": "unmet_hours_during_occupied_heating",
+          "description": "",
+          "type": "Double",
+          "model_dependent": false,
+          "$$hashKey": "object:4841",
+          "checked": true,
+          "visualize": "true",
+          "measure_name": "openstudio_results",
+          "measure_class_name": "OpenStudioResults",
+          "measure_uid": "a25386cd-60e4-46bc-8b11-c755f379d916"
+        }
+      ],
+      "skip": false,
+      "showWarningText": false
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\generic_qaqc",
+      "name": "generic_qaqc",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\generic_qaqc",
+      "uid": "d58d6b29-69ba-4915-b907-3c2c37ddb7c7",
+      "uuid": "{d58d6b29-69ba-4915-b907-3c2c37ddb7c7}",
+      "version_id": "c3a65f4b-fe7d-4349-960d-bb4b1fe3e0d1",
+      "version_uuid": "{c3a65f4b-fe7d-4349-960d-bb4b1fe3e0d1}",
+      "version_modified": "20170510T043335Z",
+      "xml_checksum": "0A3BF61C",
+      "display_name": "Generic QAQC",
+      "class_name": "GenericQAQC",
+      "description": "This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable.",
+      "modeler_description": "Reads the model and sql file to pull out the necessary information and run the model checks.  The check results show up as warning messages in the measure's output on the PAT run tab.",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Uses SketchUp API",
+          "display_name": "Uses SketchUp API",
+          "value": false
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        },
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "OpenStudio Application"
+        },
+        {
+          "name": "Intended Software Tool",
+          "display_name": "Intended Software Tool",
+          "value": "Parametric Analysis Tool"
+        },
+        {
+          "name": "Intended Use Case",
+          "display_name": "Intended Use Case",
+          "value": "Automatic Report Generation"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-00B6",
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-00B8",
+          "option_1": "QAQC",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-00BA",
+          "option_1": "Option 1 Description: This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable.",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "template",
+          "display_name": "Target ASHRAE Standard",
+          "description": "This used to set the target standard for most checks.",
+          "type": "Choice",
+          "required": true,
+          "model_dependent": false,
+          "default_value": "90.1-2013",
+          "choice_values": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013"
+          ],
+          "choice_display_names": [
+            "DOE Ref Pre-1980",
+            "DOE Ref 1980-2004",
+            "90.1-2004",
+            "90.1-2007",
+            "90.1-2010",
+            "90.1-2013"
+          ],
+          "$$hashKey": "uiGrid-00BC",
+          "option_1": "90.1-2013",
+          "variable": false,
+          "display_name_short": "template",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [
+              "DOE Ref Pre-1980",
+              "DOE Ref 1980-2004",
+              "90.1-2004",
+              "90.1-2007",
+              "90.1-2010",
+              "90.1-2013"
+            ],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "90.1-2013",
+            "minimum": "90.1-2013",
+            "mean": "90.1-2013",
+            "deltaX": "90.1-2013",
+            "stdDev": "90.1-2013",
+            "default_value": "90.1-2013",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_eui_reasonableness",
+          "display_name": "EUI Reasonableness (General)",
+          "description": "Check EUI for model against selected ASHRAE standard DOE prototype buildings.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00BE",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_eui_reasonableness",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_eui_reasonableness_tol",
+          "display_name": "EUI Reasonableness Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-00BG",
+          "option_1": 0.1,
+          "variable": false,
+          "display_name_short": "check_eui_reasonableness_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.1,
+            "minimum": 0.1,
+            "mean": 0.1,
+            "deltaX": 0.1,
+            "stdDev": 0.1,
+            "default_value": 0.1,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_eui_by_end_use",
+          "display_name": "End Use by Category (General)",
+          "description": "Check end use by category against selected ASHRAE standard DOE prototype buildings.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00BI",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_eui_by_end_use",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_eui_by_end_use_tol",
+          "display_name": "End Use by Category Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.25,
+          "$$hashKey": "uiGrid-00BK",
+          "option_1": 0.25,
+          "variable": false,
+          "display_name_short": "check_eui_by_end_use_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.25,
+            "minimum": 0.25,
+            "mean": 0.25,
+            "deltaX": 0.25,
+            "stdDev": 0.25,
+            "default_value": 0.25,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_mech_sys_part_load_eff",
+          "display_name": "Mechanical System Part Load Efficiency (General)",
+          "description": "Check 40% and 80% part load efficency against selected ASHRAE standard for the following compenent types: ChillerElectricEIR, CoilCoolingDXSingleSpeed, CoilCoolingDXTwoSpeed, CoilHeatingDXSingleSpeed. Checking EIR Function of Part Load Ratio curve for chiller and EIR Function of Flow Fraction for DX coils.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00BM",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_mech_sys_part_load_eff",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_mech_sys_part_load_eff_tol",
+          "display_name": "Mechanical System Part Load Efficiency Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.05,
+          "$$hashKey": "uiGrid-00BO",
+          "option_1": 0.05,
+          "variable": false,
+          "display_name_short": "check_mech_sys_part_load_eff_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.05,
+            "minimum": 0.05,
+            "mean": 0.05,
+            "deltaX": 0.05,
+            "stdDev": 0.05,
+            "default_value": 0.05,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_mech_sys_capacity",
+          "display_name": "Mechanical System Capacity (General)",
+          "description": "Check HVAC capacity against ASHRAE rules of thumb for chiller max flow rate, air loop max flow rate, air loop cooling capciaty, and zone heating capcaity. Zone heating check will skip thermal zones without any exterior exposure, and thermal zones that are not conditioned.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00BQ",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_mech_sys_capacity",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_simultaneous_heating_and_cooling",
+          "display_name": "Simultaneous Heating and Cooling (General)",
+          "description": "Check for simultaneous heating and cooling by looping through all Single Duct VAV Reheat Air Terminals and analyzing hourly data when there is a cooling load. ",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00BS",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_simultaneous_heating_and_cooling",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_simultaneous_heating_and_cooling_max_tol",
+          "display_name": "Simultaneous Heating and Cooling Max Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.05,
+          "$$hashKey": "uiGrid-00BU",
+          "option_1": 0.05,
+          "variable": false,
+          "display_name_short": "check_simultaneous_heating_and_cooling_max_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.05,
+            "minimum": 0.05,
+            "mean": 0.05,
+            "deltaX": 0.05,
+            "stdDev": 0.05,
+            "default_value": 0.05,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_internal_loads",
+          "display_name": "Internal Loads (Baseline)",
+          "description": "Check LPD, ventilation rates, occupant density, plug loads, and equipment loads against selected ASHRAE standard and DOE Prototype buildings.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00BW",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_internal_loads",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_internal_loads_tol",
+          "display_name": "Internal Loads Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-00BY",
+          "option_1": 0.1,
+          "variable": false,
+          "display_name_short": "check_internal_loads_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.1,
+            "minimum": 0.1,
+            "mean": 0.1,
+            "deltaX": 0.1,
+            "stdDev": 0.1,
+            "default_value": 0.1,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_schedules",
+          "display_name": "Schedules (Baseline)",
+          "description": "Check schedules for lighting, ventilation, occupant density, plug loads, and equipment based on DOE reference building schedules in terms of full load hours per year.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00C0",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_schedules",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_schedules_tol",
+          "display_name": "Schedules Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.05,
+          "$$hashKey": "uiGrid-00C2",
+          "option_1": 0.05,
+          "variable": false,
+          "display_name_short": "check_schedules_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.05,
+            "minimum": 0.05,
+            "mean": 0.05,
+            "deltaX": 0.05,
+            "stdDev": 0.05,
+            "default_value": 0.05,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_envelope_conductance",
+          "display_name": "Envelope R-Value (Baseline)",
+          "description": "Check envelope against selected ASHRAE standard. Roof reflectance of 55%, wall relfectance of 30%.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00C4",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_envelope_conductance",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_envelope_conductance_tol",
+          "display_name": "Envelope R-Value Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-00C6",
+          "option_1": 0.1,
+          "variable": false,
+          "display_name_short": "check_envelope_conductance_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.1,
+            "minimum": 0.1,
+            "mean": 0.1,
+            "deltaX": 0.1,
+            "stdDev": 0.1,
+            "default_value": 0.1,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_domestic_hot_water",
+          "display_name": "Domestic Hot Water (Baseline)",
+          "description": "Check against the 2011 ASHRAE Handbook - HVAC Applications, Table 7 section 60.13.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00C8",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_domestic_hot_water",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_domestic_hot_water_tol",
+          "display_name": "Domestic Hot Water Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.25,
+          "$$hashKey": "uiGrid-00CA",
+          "option_1": 0.25,
+          "variable": false,
+          "display_name_short": "check_domestic_hot_water_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.25,
+            "minimum": 0.25,
+            "mean": 0.25,
+            "deltaX": 0.25,
+            "stdDev": 0.25,
+            "default_value": 0.25,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_mech_sys_efficiency",
+          "display_name": "Mechanical System Efficiency (Baseline)",
+          "description": "Check against selected ASHRAE standard for the following component types: ChillerElectricEIR, CoilCoolingDXSingleSpeed, CoilCoolingDXTwoSpeed, CoilHeatingDXSingleSpeed, BoilerHotWater, FanConstantVolume, FanVariableVolume, PumpConstantSpeed, PumpVariableSpeed.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00CC",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_mech_sys_efficiency",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_mech_sys_efficiency_tol",
+          "display_name": "Mechanical System Efficiency Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "fraction",
+          "default_value": 0.1,
+          "$$hashKey": "uiGrid-00CE",
+          "option_1": 0.1,
+          "variable": false,
+          "display_name_short": "check_mech_sys_efficiency_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.1,
+            "minimum": 0.1,
+            "mean": 0.1,
+            "deltaX": 0.1,
+            "stdDev": 0.1,
+            "default_value": 0.1,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_mech_sys_type",
+          "display_name": "Mechanical System Type (Baseline)",
+          "description": "Check against ASHRAE 90.1. Infers the baseline system type based on the equipment serving the zone and their heating/cooling fuels. Only does a high-level inference; does not look for the presence/absence of required controls, etc.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00CG",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_mech_sys_type",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_supply_air_and_thermostat_temp_difference",
+          "display_name": "Supply and Zone Air Temperature (Baseline)",
+          "description": "Check if fans modeled to ASHRAE 90.1 2013 Section G3.1.2.9 requirements. Compare the supply air temperature for each thermal zone against the thermostat setpoints. Throw flag if temperature difference excedes threshold of 20.0F plus the selected tolerance.",
+          "type": "Boolean",
+          "required": true,
+          "model_dependent": false,
+          "default_value": true,
+          "$$hashKey": "uiGrid-00CI",
+          "option_1": true,
+          "variable": false,
+          "display_name_short": "check_supply_air_and_thermostat_temp_difference",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": true,
+            "minimum": true,
+            "mean": true,
+            "deltaX": true,
+            "stdDev": true,
+            "default_value": true,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "name": "check_supply_air_and_thermostat_temp_difference_tol",
+          "display_name": "Supply and Zone Air Temperature Tolerance",
+          "description": "",
+          "type": "Double",
+          "required": true,
+          "model_dependent": false,
+          "units": "F",
+          "default_value": 0.5,
+          "$$hashKey": "uiGrid-00CK",
+          "option_1": 0.5,
+          "variable": false,
+          "display_name_short": "check_supply_air_and_thermostat_temp_difference_tol",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": 0.5,
+            "minimum": 0.5,
+            "mean": 0.5,
+            "deltaX": 0.5,
+            "stdDev": 0.5,
+            "default_value": 0.5,
+            "showWarningIcon": false
+          }
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "5/9/2017",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 14,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [
+            {
+              "name": "template",
+              "value": "90.1-2013"
+            },
+            {
+              "name": "check_eui_reasonableness",
+              "value": true
+            },
+            {
+              "name": "check_eui_reasonableness_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_eui_by_end_use",
+              "value": true
+            },
+            {
+              "name": "check_eui_by_end_use_tol",
+              "value": 0.25
+            },
+            {
+              "name": "check_mech_sys_part_load_eff",
+              "value": true
+            },
+            {
+              "name": "check_mech_sys_part_load_eff_tol",
+              "value": 0.05
+            },
+            {
+              "name": "check_mech_sys_capacity",
+              "value": true
+            },
+            {
+              "name": "check_simultaneous_heating_and_cooling",
+              "value": true
+            },
+            {
+              "name": "check_simultaneous_heating_and_cooling_max_tol",
+              "value": 0.05
+            },
+            {
+              "name": "check_internal_loads",
+              "value": true
+            },
+            {
+              "name": "check_internal_loads_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_schedules",
+              "value": true
+            },
+            {
+              "name": "check_schedules_tol",
+              "value": 0.05
+            },
+            {
+              "name": "check_envelope_conductance",
+              "value": true
+            },
+            {
+              "name": "check_envelope_conductance_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_domestic_hot_water",
+              "value": true
+            },
+            {
+              "name": "check_domestic_hot_water_tol",
+              "value": 0.25
+            },
+            {
+              "name": "check_mech_sys_efficiency",
+              "value": true
+            },
+            {
+              "name": "check_mech_sys_efficiency_tol",
+              "value": 0.1
+            },
+            {
+              "name": "check_mech_sys_type",
+              "value": true
+            },
+            {
+              "name": "check_supply_air_and_thermostat_temp_difference",
+              "value": true
+            },
+            {
+              "name": "check_supply_air_and_thermostat_temp_difference_tol",
+              "value": 0.5
+            }
+          ],
+          "name": "QAQC",
+          "description": "Option 1 Description: This measure extracts key simulation results and performs basic model QAQC checks. Each category of checks provides a description of the source of the check. In some cases the target standards and tollerances are adjustable."
+        }
+      ],
+      "instanceId": 0.1227126967249319,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:1755",
+      "outputMeasure": false,
+      "skip": false,
+      "showWarningText": false
+    },
+    {
+      "measure_dir": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_reports",
+      "name": "ambient_loop_reports",
+      "directory": "C:\\Users\\aallen\\Documents\\GitHub\\ambient-loop-pat-projects\\sweep_retail_v2\\measures\\ambient_loop_reports",
+      "uid": "9b470a52-d218-4b50-80dd-d229ce73438d",
+      "uuid": "{9b470a52-d218-4b50-80dd-d229ce73438d}",
+      "version_id": "7b5763ec-8502-477b-9941-21a4211cd7e7",
+      "version_uuid": "{7b5763ec-8502-477b-9941-21a4211cd7e7}",
+      "version_modified": "20190308T081724Z",
+      "xml_checksum": "15BF4E57",
+      "display_name": "Ambient Loop Reports",
+      "class_name": "AmbientLoopReports",
+      "description": "Add report variables for post processing the ambient loop data.",
+      "modeler_description": "Reporting Variables for Ambient Loop",
+      "tags": "Reporting.QAQC",
+      "outputs": [],
+      "attributes": [
+        {
+          "name": "Measure Type",
+          "display_name": "Measure Type",
+          "value": "ReportingMeasure"
+        }
+      ],
+      "arguments": [
+        {
+          "specialRowId": "optionDelete",
+          "$$hashKey": "uiGrid-0BTZ",
+          "option_1": "option_1",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": null,
+            "minimum": null,
+            "mean": null,
+            "deltaX": null,
+            "stdDev": null,
+            "default_value": null,
+            "showWarningIcon": false
+          }
+        },
+        {
+          "specialRowId": "optionName",
+          "type": "String",
+          "$$hashKey": "uiGrid-0BU1",
+          "option_1": "Enabled",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
+        },
+        {
+          "specialRowId": "optionDescription",
+          "type": "String",
+          "$$hashKey": "uiGrid-0BU3",
+          "option_1": "",
+          "inputs": {
+            "relationship": null,
+            "choiceDisplayNames": [],
+            "variableSetting": "Argument",
+            "distribution": "Uniform",
+            "discreteVariables": [],
+            "maximum": "",
+            "minimum": "",
+            "mean": "",
+            "deltaX": "",
+            "stdDev": "",
+            "default_value": "",
+            "showWarningIcon": false
+          }
+        }
+      ],
+      "edit": "",
+      "status": "",
+      "bcl_update": false,
+      "location": "my",
+      "add": "",
+      "open": false,
+      "addedToProject": true,
+      "date": "3/8/2019",
+      "author": "",
+      "type": "ReportingMeasure",
+      "seed": "example_model.osm",
+      "workflow_index": 15,
+      "options": [
+        {
+          "id": "option_1",
+          "arguments": [],
+          "name": "Enabled",
+          "description": ""
+        }
+      ],
+      "instanceId": 0.691079503563184,
+      "numberOfOptions": 1,
+      "$$hashKey": "object:36491",
+      "outputMeasure": false,
+      "skip": false,
+      "showWarningText": false
+    }
+  ],
+  "filesToInclude": [
+    {
+      "dirToInclude": "..\\weather\\USA_CO_Golden",
+      "unpackDirName": "../weather",
+      "$$hashKey": "object:2467"
+    }
+  ],
+  "serverScripts": {
+    "server_initialization": {
+      "file": null,
+      "arguments": []
+    },
+    "server_finalization": {
+      "file": null,
+      "arguments": []
+    },
+    "worker_initialization": {
+      "file": "initialize.sh",
+      "arguments": [
+        "/usr/local/openstudio-2.9.1/Ruby",
+        "openstudio-standards",
+        "NREL/openstudio-standards",
+        "ambient-loop"
+      ]
+    },
+    "worker_finalization": {
+      "file": null,
+      "arguments": []
+    }
+  },
+  "designAlternatives": [
+    {
+      "name": "18 deg",
+      "seedModel": "example_model.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "openstudio_results": "Results",
+      "generic_qaqc": "QAQC",
+      "ambient_loop_reports": "Enabled",
+      "$$hashKey": "uiGrid-02VG",
+      "internal_loads_multiplier": "None",
+      "ambient_loop_add_ets_system": "None",
+      "ambient_loop_temperature_setpoint": "None",
+      "hot_water_loop_design_temperature": "None",
+      "ambient_loop_prototype_building_by_location": "None",
+      "set_window_to_wall_ratio": "None",
+      "set_heat_pump_heating_coil_rated_cop": "None",
+      "set_heat_pump_cooling_coil_rated_cop": "None",
+      "remove_all_doors": "None",
+      "set_roof_insulation_r_value": "None",
+      "set_exterior_wall_insulation_r_value": "None",
+      "set_schedule_profile_start_end_times": "None",
+      "shift_schedule_profile_time": "None"
+    },
+    {
+      "name": "20 deg",
+      "seedModel": "example_model.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "openstudio_results": "Results",
+      "generic_qaqc": "QAQC",
+      "ambient_loop_reports": "Enabled",
+      "$$hashKey": "uiGrid-02WK",
+      "internal_loads_multiplier": "None",
+      "ambient_loop_add_ets_system": "None",
+      "ambient_loop_temperature_setpoint": "None",
+      "hot_water_loop_design_temperature": "None",
+      "ambient_loop_prototype_building_by_location": "None",
+      "set_window_to_wall_ratio": "None",
+      "set_heat_pump_heating_coil_rated_cop": "None",
+      "set_heat_pump_cooling_coil_rated_cop": "None",
+      "remove_all_doors": "None",
+      "set_roof_insulation_r_value": "None",
+      "set_exterior_wall_insulation_r_value": "None",
+      "set_schedule_profile_start_end_times": "None",
+      "shift_schedule_profile_time": "None"
+    },
+    {
+      "name": "25 deg",
+      "seedModel": "example_model.osm",
+      "weatherFile": "USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "openstudio_results": "Results",
+      "generic_qaqc": "QAQC",
+      "ambient_loop_reports": "Enabled",
+      "$$hashKey": "uiGrid-02WI",
+      "internal_loads_multiplier": "None",
+      "ambient_loop_add_ets_system": "None",
+      "ambient_loop_temperature_setpoint": "None",
+      "hot_water_loop_design_temperature": "None",
+      "ambient_loop_prototype_building_by_location": "None",
+      "set_window_to_wall_ratio": "None",
+      "set_heat_pump_heating_coil_rated_cop": "None",
+      "set_heat_pump_cooling_coil_rated_cop": "None",
+      "remove_all_doors": "None",
+      "set_roof_insulation_r_value": "None",
+      "set_exterior_wall_insulation_r_value": "None",
+      "set_schedule_profile_start_end_times": "None",
+      "shift_schedule_profile_time": "None"
+    }
+  ],
+  "analysisID": null,
+  "datapoints": []
+}
