@@ -8,7 +8,7 @@ echo "Calling $0 with arguments: $@"
 
 if [[ (-z $1) || (-z $2) || (-z $3) ]]; then
     echo "Expecting script to have 3 parameters:"
-    echo "  1: Name of the existing gem to replace, e.g. openstudio-standards"
+    echo "  1: Name of the exiting gem to replace, e.g. openstudio-standards"
     echo "  2: Argument of the new gem GitHub repo, e.g. NREL/openstudio-standards"
     echo "  3: Name of the GitHub branch to install, e.g. master"
     echo "  -- example use: ./set_standards_version.sh openstudio-standards NREL/openstudio-standards master"
@@ -125,7 +125,7 @@ cp $GEMFILE_DIR/openstudio-gems.gemspec $NEW_GEMFILE_DIR
 replace_gem_in_files $NEW_GEMFILE_DIR $EXISTING_GEM $NEW_GEM_REPO $NEW_GEM_BRANCH
 
 # Pull the workflow gem from develop otherwise `require 'openstudio-workflow'` fails, supposedly
-replace_gem_in_files $NEW_GEMFILE_DIR 'openstudio-workflow' 'NREL/openstudio-workflow-gem' 'develop'
+replace_gem_in_files $NEW_GEMFILE_DIR 'openstudio-workflow' 'NREL/openstudio-workflow-gem' '2.9.X-LTS'
 
 # Show the modified Gemfile contents in the log
 cd $NEW_GEMFILE_DIR

@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>hot_water_loop_design_temperature</name>
   <uid>c4674445-7dad-4ba9-8b06-11028fd76904</uid>
-  <version_id>3a926f57-2f35-4c0e-bf0d-4ed2a3dc5d5a</version_id>
-  <version_modified>20191018T233531Z</version_modified>
+  <version_id>044a215b-ce82-41ea-a7f7-1df0d74b8bab</version_id>
+  <version_modified>20191101T164412Z</version_modified>
   <xml_checksum>1F3D2430</xml_checksum>
   <class_name>HotWaterLoopDesignTemperature</class_name>
   <display_name>Hot Water Loop Design Temperature</display_name>
