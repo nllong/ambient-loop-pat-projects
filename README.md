@@ -15,7 +15,7 @@ simulation results can be used to generate reduced order models using the [ROM F
     
 * If running simulations, then following instructions below on "Running Simulations" before launching PAT. If PAT is launched first, then PAT will use it's own version of OpenStudio Server which doesn't support running the algorithms needed for these projects. 
 
-* Launch PAT (> Version 2.7.1). Version 3.x works as well but only against the 2.9.1 OpenStudio Server.
+* Launch PAT (> Version 2.7.1). PAT Version 3.x works as well but only against the 2.9.1 OpenStudio Server.
 
 * Open any of the projects
 
@@ -23,7 +23,7 @@ simulation results can be used to generate reduced order models using the [ROM F
 
 In order to run the simulations locally, you will need to run a docker-based version of OpenStudio Server. Note that you must run the commands below before launching PAT, otherwise, PAT will launch it's own version of OpenStudio Server (in local mode) on the same port as the dockerized OpenStudio Server.
 
-It is best to use the OpenStudio Server version that is this repo's docker-compose file (2.9.1). 
+It is best to use the OpenStudio Server version that is this repo's docker-compose file (2.9.1). There is a second docker compose file that is for a newer version of OpenStudio Server that can be used for testing (docker-compose-os-3.x.yml)
 
 * Install [Docker CE](https://docs.docker.com/install/)
 
