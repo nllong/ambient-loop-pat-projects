@@ -94,7 +94,7 @@ class AmbientLoopPrototypeBuildingByLocation < OpenStudio::Measure::ModelMeasure
     epw_file = OpenStudio::Weather::Epw.load(weather_file)
 
     # load the STAT file
-    stat_file = "#{File.join(File.dirname(epw_file.filename), File.basename(epw_file.filename, '.*'))}.stat"
+    stat_file = "#{File.join(File.dirname(epw_file.filename), '..', 'lib', 'weather', File.basename(epw_file.filename, '.*'))}.stat"
     unless File.exist? stat_file
       runner.registerInfo 'Could not find STAT file by filename, looking in the directory'
       stat_files = Dir["#{File.dirname(epw_file.filename)}/*.stat"]
@@ -202,7 +202,7 @@ class AmbientLoopPrototypeBuildingByLocation < OpenStudio::Measure::ModelMeasure
     model.getObjectsByType('OS:SizingPeriod:DesignDay'.to_IddObjectType).each(&:remove)
 
     # find the ddy files
-    ddy_file = "#{File.join(File.dirname(epw_file.filename), File.basename(epw_file.filename, '.*'))}.ddy"
+    ddy_file = "#{File.join(File.dirname(epw_file.filename), '..', 'lib', 'weather', File.basename(epw_file.filename, '.*'))}.ddy"
     unless File.exist? ddy_file
       ddy_files = Dir["#{File.dirname(epw_file.filename)}/*.ddy"]
       if ddy_files.size > 1

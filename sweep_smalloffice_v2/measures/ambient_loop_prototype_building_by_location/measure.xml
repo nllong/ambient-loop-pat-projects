@@ -1,9 +1,10 @@
+<?xml version="1.0"?>
 <measure>
   <schema_version>3.0</schema_version>
   <name>ambient_loop_prototype_building_by_location</name>
   <uid>eed65df5-3517-44d5-8ecd-35631aadcc24</uid>
-  <version_id>bce99553-beb5-4dec-8943-eb563cd2443d</version_id>
-  <version_modified>20190304T072810Z</version_modified>
+  <version_id>bd20e599-c8d0-43a5-bb0f-4f9c10e715f7</version_id>
+  <version_modified>20201116T032206Z</version_modified>
   <xml_checksum>2C38F48B</xml_checksum>
   <class_name>AmbientLoopPrototypeBuildingByLocation</class_name>
   <display_name>Ambient Loop Prototype Building By Location</display_name>
@@ -131,8 +132,8 @@
       <model_dependent>false</model_dependent>
     </argument>
   </arguments>
-  <outputs/>
-  <provenances/>
+  <outputs />
+  <provenances />
   <tags>
     <tag>Whole Building.Space Types</tag>
   </tags>
@@ -144,12 +145,6 @@
     </attribute>
   </attributes>
   <files>
-    <file>
-      <filename>epw.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>75D1E203</checksum>
-    </file>
     <file>
       <filename>os_lib_helper_methods.rb</filename>
       <filetype>rb</filetype>
@@ -163,6 +158,12 @@
       <checksum>FA04CAFA</checksum>
     </file>
     <file>
+      <filename>epw.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>7D1F3352</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>2.5.0</identifier>
@@ -171,7 +172,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>A553AFA9</checksum>
+      <checksum>3C746B76</checksum>
     </file>
   </files>
 </measure>
